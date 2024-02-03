@@ -9,6 +9,7 @@ mainWindow.minsize(600,650)   # минимальные размеры
 mainWindow.maxsize(600,650)   # сакисмальные размеры
 
 contactsData = ["мама", "сына", "мой номер"]
+ServerLink = []
 
 #def sendMessageFunction():
     
@@ -18,7 +19,7 @@ def findContactFunction():
     window = tkn.Tk()
     window.title("Add contact")
     window.geometry("250x150")
-    window.maxsize(250, 150)
+    window.minsize(250, 150)
     window.maxsize(250, 150)
 
     # поле для вывода результатов поиска
@@ -34,23 +35,31 @@ def findContactFunction():
 def connectFuction():
     window = tkn.Tk()
     window.title("Authorization")
-    window.geometry("250x170")
-    window.maxsize(250, 150)
-    window.maxsize(250, 150)
+    window.geometry("250x250")
+    window.minsize(250, 250)
+    window.maxsize(250, 250)
+
+    # поле ввода ссылки подключения
+    labelServerLink = ttk.Label(window, text="Connect Link")
+    labelServerLink.pack(side="top", pady= 1)
+
+    ServerLinkData = tkn.Entry(window, width = 20)
+    ServerLinkData.pack(side="top", pady= 2)
+
 
     # поле ввода логина
     labelLogin = ttk.Label(window, text="Login")
-    labelLogin.pack(side="top", pady= 1)
+    labelLogin.pack(side="top", pady= 3)
 
     login = tkn.Entry(window, width = 20)
-    login.pack(side="top", pady= 2)
+    login.pack(side="top", pady= 4)
 
     # поле ввода пароля
     labelPass = ttk.Label(window, text="Password")
-    labelPass.pack(side="top", pady= 3)
+    labelPass.pack(side="top", pady= 5)
 
     password = tkn.Entry(window, width = 20)
-    password.pack(side="top", pady= 4)
+    password.pack(side="top", pady= 6)
 
 
     #Кнопка подключения к серверу
