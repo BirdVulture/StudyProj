@@ -1,18 +1,17 @@
 import tkinter as tkn
 from tkinter import ttk
+import csv
 
 
 
-mainWindow = tkn.Tk()
+'''mainWindow = tkn.Tk()
 mainWindow.title("vulture_bird") #название
 mainWindow.geometry("600x650")
 mainWindow.minsize(600,650)   # минимальные размеры
-mainWindow.maxsize(600,650)   # макисмальные размеры
+mainWindow.maxsize(600,650)   # макисмальные размеры'''
 
-contacts = [
-    [1, "Мама"],
-    [2, "Сына"]
-    ]
+contactsFileName = "ContactList.csv"
+contacts = []
 
 contactsData = ["мама", "сына", "мой номер"]
 ServerLink = []
@@ -24,10 +23,18 @@ findedContactData = []
 #Загрузка контактов
 def LoadContactData(): 
     global contacts
-    a = contacts
-    for i in range(len(a)):
-        for j in range(len(a[i])):
-              
+    global contactsData
+    with open(contactsFileName, "r", newline= "" ) as file:
+        reader = csv.reader(file)
+        for row in reader:
+            contacts.append(row) 
+            contactsData = contacts
+        
+
+
+LoadContactData()
+print(contacts)
+print(contactsData)             
 
 
 
@@ -42,7 +49,7 @@ def LoadContactData():
 
 #def sendMessageFunction():  
 
-def findContactFunction(): # поиск контактов
+'''def findContactFunction(): # поиск контактов
 
 
     window = tkn.Tk()
@@ -147,4 +154,4 @@ contacts_listbox = tkn.Listbox(listvariable = contactsVar, height = 30, width = 
 contacts_listbox.grid(row=2, column=0, ipadx=6, ipady=6, padx=5, pady=5)
 
 
-mainWindow.mainloop()
+mainWindow.mainloop()'''
