@@ -71,3 +71,4 @@ def mainTwo()
 
 def square(n): #степнь n ** 2
     return pow(n, 2)
+
