@@ -138,7 +138,7 @@ else:
     print("Grade: D")
 '''
 # Parity
-
+'''
 x = int(input("What's x? "))
 y = int(input("What's y?"))
 
@@ -158,10 +158,60 @@ def main():
 # Even or odd (четное/нечетное) 
 def is_even(n):
     if n % 2 ==0:
-        return True
-    else:
-        return False
-    
+#        return True
+#    else:
+#        return False
 
 
-    
+# the better code
+        
+          
+def is_even_two(n):
+    return True if n % 2 == 0 else False
+
+
+
+# The more better code
+def is_even(n):
+    return n % 2 == 0
+'''    
+
+#match
+
+name = input("What's your name? ")
+'''
+if name == "Harry":
+    print("Griffindor")
+elif name == "Hermione":
+    print("Griffindor")
+elif name == "Ron":
+    print("Griffendor")
+elif name == "Draco":
+    print("Slytherin")
+else:
+    print("Who")
+'''
+# Another way (Соответствие)
+match name:
+    case "Harry":
+        print("Griffendor")
+    case "Hermione":
+        print("Griffendor")
+    case "Ron":
+        print("Griffenor")
+    case "Draco":
+        print("Slytherin")
+    case _:
+        print("Who?")
+
+# the better code 
+match name:
+    case "Harry" | "Hermione" | "Ron":
+        print("Griffendor")
+    case "Draco":
+        print("Slytherin")
+    case _:
+        print("Who?")
+
+#Loops 2:46
+        
