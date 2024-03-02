@@ -177,9 +177,9 @@ def is_even(n):
 '''    
 
 #match
-
-name = input("What's your name? ")
 '''
+name = input("What's your name? ")
+
 if name == "Harry":
     print("Griffindor")
 elif name == "Hermione":
@@ -192,6 +192,7 @@ else:
     print("Who")
 '''
 # Another way (Соответствие)
+'''
 match name:
     case "Harry":
         print("Griffendor")
@@ -213,5 +214,64 @@ match name:
     case _:
         print("Who?")
 
+'''
 #Loops 2:46
-        
+'''        
+i = 3
+
+while i != 0: # while  i is not equal 0 
+    print("meow")
+    i = i - 1
+'''
+'''
+for i  in [0, 1, 2]:
+    print("meow")
+
+#the better code
+for i in range(3):
+    print("meow")
+
+#the more better code
+print("meow\n" * 3, end="")
+
+while True:
+    n = int(input("What's n? "))
+    if n < 0:
+        continue
+    else:
+        break 
+'''
+
+#the better code (через функции)
+'''
+def main():
+    number = get_number()
+    meow(number)
+    
+while True:
+    n = int(input("What's n? "))
+    if n > 0:
+        break 
+
+for i in range(n):
+    print("meow")
+'''
+'''
+def get_number():
+    while True:
+        n = int(input("What's n? "))
+        if n > 0:
+            break
+        return n
+
+def meow(n):
+    for _ in range(n):
+        print("meow")
+
+
+
+main()
+'''
+
+# list 3:21
+
