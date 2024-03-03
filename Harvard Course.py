@@ -241,13 +241,13 @@ while True:
     else:
         break 
 '''
-
-#the better code (через функции)
 '''
+#the better code (через функции)
+
 def main():
     number = get_number()
     meow(number)
-    
+
 while True:
     n = int(input("What's n? "))
     if n > 0:
@@ -255,8 +255,7 @@ while True:
 
 for i in range(n):
     print("meow")
-'''
-'''
+
 def get_number():
     while True:
         n = int(input("What's n? "))
@@ -274,4 +273,104 @@ main()
 '''
 
 # list 3:21
+'''
+students = ["Hermione", "Harry", "Ron"]
+'''
+ 
+#for each element in list
+''' 
+for student in students:
+    print(student)
+'''
+
+'''
+for i  in  range(len(students)):
+    print(i + 1, students[i])
+'''
+    
+
+
+
+# dicts 3:32
+'''
+students = ["Hermione", "Harry", "Ron", "Draco"]
+houses = ["Griffindor", "Griffindor", "Griffindor", "Slytherin"]
+'''
+'''
+students = {
+    "Hermione": "Griffidor",
+    "Harry": "Griffindor",
+    "Ron": "Griffindor",
+    "Draco": "Slytherin"
+}
+
+
+print(students["Hermione"])
+print(students["Harry"])
+print(students["ron"])
+print(students["Draco"])
+
+
+for student in students:
+    print(student, students[student], sep= ", ")
+'''
+'''
+students = [
+    {"name": "Hermione", "house": "Gryffindor", "patronus": "Otter"},
+    {"name": "Harry", "house": "Gryffindor", "patronus": "Stag"},
+    {"name": "Ron", "house": "Gryffindor", "patronus": "Jack Russel terrier"},
+    {"name": "Draco", "house": "Slytherin", "patronus": None}
+]
+
+for student in students:
+    print(student["name"], student["house"], student["patronus"], sep=", ")
+'''
+'''
+def main():
+    print_column(3)
+'''
+'''
+def print_column(height):
+    for _ in range(height):
+        print("#")
+'''
+# more clever code
+'''
+def print_column(height):
+    print("#\n" * height, end="")
+
+def print_row(width):
+     print("?" * width)
+
+def print_square(size):
+
+    #for each row in square 
+    for i in range(size):
+
+        #for efch brich in row
+        for j in range(size):
+
+            #print brick
+            print("#", end="")
+
+        print()     
+'''
+#another way
+'''
+def main():
+    print_square(3)
+
+def print_square(size):
+    for i in range(size):
+        print_row(size)
+
+def print_row(widht):
+    print("#" * widht)
+
+main()
+'''
+
+#Exceptions 4:05
+
+            
 
