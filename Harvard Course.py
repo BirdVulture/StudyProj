@@ -370,7 +370,83 @@ def print_row(widht):
 main()
 '''
 
-#Exceptions 4:15
+#Exceptions 4:15 (обработка ошибок ( если введен неверный тип данных))
+'''
+def main():
+    x = get_int()
+    print(f" x i {x}")
 
+
+def get_int():
+    while True: #запрашивать x пока ч не станет равно int
+        try:
+            x = int(input("What's x?"))       
+            print(f"x is {x}")
+
+        except ValueError:
+            print("x is not an integer")
+
+        else:
+            return x
+
+
+# the better code
+        
+def get_int():
+    while True: #запрашивать x пока ч не станет равно int
+        try:
+           return int(input("What's x?"))       
+           
+        except ValueError:
+            print("x is not an integer")
+
+#another way without  error message
             
+def get_int(prompt):
+    while True: #запрашивать x пока ч не станет равно int
+        try:
+           return int(input(prompt))       
+           
+        except ValueError:
+            pass #цикл без сообщеия об ошибке 
+
+
+main()
+'''
+#Libraries 4.54
+#random
+import random
+
+coin = random.choice(["heads", "tails"])
+
+
+from random import choice
+
+coin = choice(["heads", "tails"]) 
+
+number = random.randint(1, 10)
+
+cards = ["jack", "queen", "king"]
+random.shuffle(cards) #перемешать порядок элементов из списка
+for card in cards:
+    print(card)
+
+#statistics
+    
+import statistics
+
+print(statistics.mean([100, 90]))
+
+#5.13
+
+
+
+
+
+
+print (number)
+
+
+print(coin)
+
 
