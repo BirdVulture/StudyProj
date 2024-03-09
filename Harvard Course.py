@@ -414,7 +414,8 @@ def get_int(prompt):
 main()
 '''
 #Libraries 4.54
-#random
+#module random
+'''
 import random
 
 coin = random.choice(["heads", "tails"])
@@ -423,13 +424,18 @@ coin = random.choice(["heads", "tails"])
 from random import choice
 
 coin = choice(["heads", "tails"]) 
+print(coin)
 
 number = random.randint(1, 10)
+print (number)
 
 cards = ["jack", "queen", "king"]
 random.shuffle(cards) #перемешать порядок элементов из списка
 for card in cards:
     print(card)
+
+
+
 
 #statistics
     
@@ -437,16 +443,68 @@ import statistics
 
 print(statistics.mean([100, 90]))
 
-#5.13
+
+#5.13 module sys
+
+import sys
+
+print("hello, my name is ", sys.argv[0]) #from filename
+
+try: 
+    print("hello, my name is ", sys.argv[0])
+
+except IndexError:
+    print("hello, my name is ", sys.argv[0])
+
+#
+
+if len(sys.argv) < 2:
+
+    print("Too few arguments")
+
+elif len(sys.argv) > 2:
+    print("Too many arguments")
+
+else:
+     print("hello, my name is ", sys.argv[0])
+
+if len(sys.argv) < 2:
+    sys.exit("Too few arguments")
+
+elif len(sys.argv) > 2:
+    sys.exit("Too many arguments")
+
+else:
+    print("hello, my name is ", sys.argv[0])
+
+if len(sys.argv) < 2:
+    sys.exit("Too few arguments")
+
+for arg in sys.argv:
+    print("hello, my name is ", arg)
 
 
+#Slices 5:32
 
+if len(sys.argv) < 2:
+    sys.exit("Too few arguments")
 
+for arg in sys.argv[1:]:
+    print("hello, my name is ", arg)  
 
+#pip install cowsay
+'''
 
-print (number)
+#APIes pypi.org 5:47
 
+#JSON 5:48
 
-print(coin)
+import requests
+import sys
 
+if len(sys.argv) != 2:
+    sys.exit()
 
+response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term" + sys.argv[1])
+
+print(response.json())
