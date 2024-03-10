@@ -515,8 +515,11 @@ o = response.json()
 for result in o["results"]:
     print(result["trackName"])
 '''
-# Libraries 6:02
+# Libraries 6:02 
+#Export and import functions from another file
 
+#sayngs.py file with functions
+'''
 def main():
     hello("world")
     goodbye("world")
@@ -529,3 +532,16 @@ def goodbye(name):
     print(f"goodbye, {name}")
 
 main()
+'''
+#another file
+'''
+import sys
+
+from sayings import goodbye
+
+if len((sys.argv)) == 2:
+    goodbye(sys.argv[1])
+'''
+    
+#Unit Tests 6:09
+
