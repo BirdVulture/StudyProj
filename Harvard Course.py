@@ -492,19 +492,40 @@ if len(sys.argv) < 2:
 for arg in sys.argv[1:]:
     print("hello, my name is ", arg)  
 
-#pip install cowsay
+#PIP - package manager pypi.org
+#python3 -m pip install "module name"
 '''
 
 #APIes pypi.org 5:47
 
 #JSON 5:48
-
+'''
+import json
 import requests
 import sys
 
-if len(sys.argv) != 2:
-    sys.exit()
+#if len(sys.argv) != 2:
+#    sys.exit()
 
-response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term" + sys.argv[1])
+response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=" + "weezer")
 
-print(response.json())
+#print(json.dumps(response.json(), indent=2))
+
+o = response.json()
+for result in o["results"]:
+    print(result["trackName"])
+'''
+# Libraries 6:02
+
+def main():
+    hello("world")
+    goodbye("world")
+
+
+def hello(name):
+    print(f"hello, {name}")
+
+def goodbye(name):
+    print(f"goodbye, {name}")
+
+main()
