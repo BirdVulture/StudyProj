@@ -545,3 +545,108 @@ if len((sys.argv)) == 2:
     
 #Unit Tests 6:09
 
+#program Calculator
+'''
+def main ():
+    x = int(input("What's x? "))
+    print("x squared is", square(x))
+
+def square(n):
+    return n * n
+
+main()
+
+if __name__ == "__main__":
+    main()
+# test program
+    
+
+def main():
+    test_square()
+
+from calculator import square
+
+def test_square():
+    if square(2) != 4:
+        print("2 squared was not 4")
+    if square(3) != 9:
+        print("3 squred was not 9")
+
+
+if __name__ == "__main__":
+    main()
+'''
+#assert 6:20
+'''
+def main():
+    test_square()
+
+from calculator import square
+
+def test_square():
+    try:
+        assert square(2) == 4
+    except AssertionError:
+        print("2 squared was not 4")
+    
+    try:
+        assert square(3) == 9
+    except AssertionError:
+        print("3 squared was not 9")    
+
+
+if __name__ == "__main__":
+    main()
+'''
+#pytest 6:25
+
+#pyton3 pip inastall pytest
+'''
+from calculator import square
+    assert square(2) == 4
+    assert square(3) == 9
+    assert square(0) == 0
+'''
+# run pytest!!!
+'''
+from calculator import square
+
+def test_positive():
+    assert square(2) == 4
+    assert square(3) == 9
+
+def test_zero():
+    assert square(0) == 0
+
+def test_str():
+    with pytest.raises(TypeError):
+        square("cat")
+'''
+#program
+'''
+def main():
+    name = input("What's your name?")
+    hello(name)
+
+def hello(to="world"):
+    print("hello,", to)
+
+if __name__ == "__name__":
+    main()
+'''
+# test program
+from hello import hello
+
+def test_default():
+    assert hello() == "hello, world"
+
+def test_argument():
+    assert hello("David") == "hello, David"
+
+def test_argument2():
+    for name in ["Hermione", "Harry"]:
+        assert hello(name) == f"hello, {name}"
+
+#packages
+
+#File I/O 7:00
