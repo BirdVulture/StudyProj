@@ -635,6 +635,7 @@ if __name__ == "__name__":
     main()
 '''
 # test program
+'''
 from hello import hello
 
 def test_default():
@@ -648,5 +649,6 @@ def test_argument2():
         assert hello(name) == f"hello, {name}"
 
 #packages
+'''
 
 #File I/O 7:00
