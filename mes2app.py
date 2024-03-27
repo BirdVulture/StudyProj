@@ -1,20 +1,56 @@
 import tkinter as tkn
 from tkinter import ttk
+import csv
 
 
-mainWindow = tkn.Tk()
+
+'''mainWindow = tkn.Tk()
 mainWindow.title("vulture_bird") #название
 mainWindow.geometry("600x650")
 mainWindow.minsize(600,650)   # минимальные размеры
-mainWindow.maxsize(600,650)   # сакисмальные размеры
+mainWindow.maxsize(600,650)   # макисмальные размеры'''
+
+contactsFileName = "ContactList.csv"
+contacts = []
 
 contactsData = ["мама", "сына", "мой номер"]
 ServerLink = []
 
-#def sendMessageFunction():
-    
 
-def findContactFunction():
+
+findedContactData = []
+
+#Загрузка контактов
+def LoadContactData(): 
+    global contacts
+    global contactsData
+    with open(contactsFileName, "r", newline= "" ) as file:
+        reader = csv.reader(file)
+        for row in reader:
+            contacts.append(row) 
+            contactsData = contacts
+        
+
+
+LoadContactData()
+print(contacts)
+print(contactsData)             
+
+
+
+
+
+
+
+
+
+
+
+
+#def sendMessageFunction():  
+
+'''def findContactFunction(): # поиск контактов
+
 
     window = tkn.Tk()
     window.title("Add contact")
@@ -46,7 +82,6 @@ def connectFuction():
     ServerLinkData = tkn.Entry(window, width = 20)
     ServerLinkData.pack(side="top", pady= 2)
 
-
     # поле ввода логина
     labelLogin = ttk.Label(window, text="Login")
     labelLogin.pack(side="top", pady= 3)
@@ -65,6 +100,11 @@ def connectFuction():
     #Кнопка подключения к серверу
     close_button = ttk.Button(window, text="Connect", command=lambda: window.destroy())
     close_button.pack(side="bottom", pady= 5)
+
+
+
+
+
 
 
 
@@ -114,4 +154,4 @@ contacts_listbox = tkn.Listbox(listvariable = contactsVar, height = 30, width = 
 contacts_listbox.grid(row=2, column=0, ipadx=6, ipady=6, padx=5, pady=5)
 
 
-mainWindow.mainloop()
+mainWindow.mainloop()'''
