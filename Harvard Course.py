@@ -651,4 +651,184 @@ def test_argument2():
 #packages
 '''
 
-#File I/O 7:00
+#File I/O 7:00 
+#LIST
+'''
+names = []
+
+for _ in range(3):
+    name = input("What's your name?")
+    names.append(name)
+
+
+print(f"hello, {name}")
+
+#clever code
+
+names = []
+
+for _ in range(3):
+    names.append(input("What's your name?"))
+
+
+print(f"hello, {name}")
+'''
+#create file
+'''
+name = input("What's your name?")
+
+file = open("names.txt", "w")
+file.write(name)
+file.close()
+
+#clever code
+name = input("What's your name?")
+
+file = open("names.txt", "w")
+file.write(f"{name}\n")
+file.close()
+
+#with
+# add data to file
+name = input("What's your name?")
+
+with open("names.txt", "a") as file: # "a" - add data to file
+    file.write(f"{name}\n") # add data to new line in file
+
+#read lines from file and write it to list
+
+with open("names.txt", "r") as file:
+    lines = file.readlines()
+
+for line in lines:
+    print("hello, ", line.rstrip()) #rstrip remove white spaces
+
+#more compact code
+
+with open("names.txt", "r") as file:
+    for line in file:
+        print("hello, ", line.rstrip())
+
+names = []
+
+with open("names.txt", "r") as file:
+    for line in file:
+        names.append(line.rstrip())
+
+for name in sorted(names):
+    print(f"hello, {name}")
+
+#more compact code
+
+with open("names.txt", "r") as file:
+    for line in sorted(file):
+        print("hello, ", line.rstrip()) 
+'''
+
+#csv file
+# Export from .csv, split each line for two elements by ,
+'''
+with open("students.csv") as file:
+    for line in file:
+        row = line.rstrip().split(",")
+        print(f"{row[0]} is in {row[1]}")
+
+
+with open("students.csv") as file:
+    for line in file:
+        name, house = line.rstrip().split(",")
+        print(f"{name} is in {house}")
+
+
+students = []
+with open ("students.csv") as file:
+    for line in file:
+        name, house =line.rstrip().split(",")
+        students.append(f"{name} is in {house}")
+
+for student in sorted(students):
+    print(student)
+'''
+
+#Dictionaries! key-value
+
+'''
+students = []
+with open ("students.csv") as file:
+    for line in file:
+        name, house =line.rstrip().split(",")
+        student = {}
+        student["name"] = name
+        student["house"] = house
+        students.append(student)
+
+for student in students:
+    print(f"{student['name']} is in {student['house']}")
+
+students = []
+with open ("students.csv") as file:
+    for line in file:
+        name, house =line.rstrip().split(",")
+        student = {}
+        student = {"name": name, "house": house}
+        students.append(student)
+
+for student in students:
+    print(f"{student['name']} is in {student['house']}")
+
+
+#sort dictionaries
+    
+students = []
+with open ("students.csv") as file:
+    for line in file:
+        name, house =line.rstrip().split(",")
+        student = {}
+        student = {"name": name, "house": house}
+        students.append(student)
+
+def get_name(student):
+    return student["name"]
+
+
+for student in sorted(students, key=get_name):
+    print(f"{student['name']} is in {student['house']}")
+
+
+#with lambda function
+
+students = []
+with open ("students.csv") as file:
+    for line in file:
+        name, house =line.rstrip().split(",")
+        student = {}
+        student = {"name": name, "house": house}
+        students.append(student)
+
+
+for student in sorted(students, key=lambda student: student[name]):
+    print(f"{student['name']} is in {student['house']}")
+'''
+
+#csv library
+    
+import csv
+
+students = []
+with open ("students.csv") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        students.append({"name": row[0], "home": row[1]})
+
+
+#back the dictionary 
+
+import csv
+
+students = []
+with open ("students.csv") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        students.append({"name": row["name"], "home": row["home"]})
+
+#8:14
