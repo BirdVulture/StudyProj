@@ -808,7 +808,7 @@ with open ("students.csv") as file:
 
 for student in sorted(students, key=lambda student: student[name]):
     print(f"{student['name']} is in {student['house']}")
-'''
+
 
 #csv library
     
@@ -832,3 +832,42 @@ with open ("students.csv") as file:
         students.append({"name": row["name"], "home": row["home"]})
 
 #8:14
+
+import csv
+
+name = input("What's your name? ")
+home = input("Where's your home? ")
+
+with open("students.csv", "a") as file:
+    writer = csv.writer(file)
+    writer.writerow([name, home])
+
+#
+
+import csv
+
+name = input("What's your name? ")
+home = input("Where's your home? ")
+
+with open("students.csv", "a") as file:
+    writer = csv.DictWriter(file, fieldnames=["name", "home"])
+    writer.writerow({"name": name, "home": home})
+
+
+#Images
+import sys
+
+from PIL import Image
+
+images = []
+
+for arg in sys.argv[1:]:
+    image = Image.open(arg)
+    images.append(image)
+
+images[0].save(
+    "costumes.gif", save_all=True, append_images=[images[1]], duration=200, loop=0
+)
+'''
+
+# REGULAR EXPRESSIONS 8:30
