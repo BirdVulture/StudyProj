@@ -871,3 +871,66 @@ images[0].save(
 '''
 
 # REGULAR EXPRESSIONS 8:30
+
+'''
+email = input("What's your email?").strip()
+
+
+if "@" in email and "." in   email: 
+    print("Valid")
+else:
+    print("Invalid")
+
+username, domain = email.split("@") 
+
+#if username and ". " in domain: #var 1
+
+if username and domain.endswith(".edu"): #var 2    
+    print("valid")
+else:
+    print("Invalid")
+'''
+
+#re - library for regular expressions
+
+import re
+'''
+email = input("What's your email?").strip()
+#if re.search(r".+@.+\.edu", email):
+#if re.search(r".+@.+\.edu", email):
+#if re.search(r"^[^@]+@[^@]+\.edu$", email):
+#if re.search(r"^[a-zA-Z0-9_\.]+@[a-zA-Z0-9_\.]+\.edu$", email):
+if re.search(r"^(\w|\.)+@(\w+\.)?\w+\.(edu|com|gov)$", email):   
+
+    print("Valid")
+else:
+    print("Invalid")
+
+'''
+'''
+name = input("What's your name? ").strip()
+if "," in name:
+    last, first = name.split(", ")
+    name = f"{first} {last} "
+print(f"hello, {name}")
+
+import re
+matches = re.search(r"^(.+), *(.+)$", name)
+if matches:
+    last = matches.groups(1)
+    first = matches.group(2)
+    name = f"{first} {last}"
+
+#another way
+if matches:
+    name = matches.group(2) +" " + matches.group(1)
+    
+print(f"hello, {name}")
+'''
+
+url = input("URL: ").strip()
+print(url)
+
+
+
+
