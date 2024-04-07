@@ -7,7 +7,7 @@
     participant Back
 
     activate Client
-        Client -> UI: Запрос 1
+        Client -> UI: Запрос
 
     activate UI
         UI -> Back: Запрос от клиента
