@@ -927,9 +927,29 @@ if matches:
     
 print(f"hello, {name}")
 '''
+#twitter https://twitter.com/davidjmalan username from url
+import re
 
 url = input("URL: ").strip()
-print(url)
+
+#username = url.replace("https://twitter.com/", "")
+#username = url.replaceprefix("https://twitter.com/")
+#username = re.sub(r"^(https?://)?(www\.|)?twitter\.com/", "", url)
+#print(f"Userneme: {username}")
+
+'''
+matches = re.search(r"^https?://(www.\.)?twitter\.com/.+$", url, re.IGNORECASE)
+
+if matches:
+    print(f"username:", matches.group(2))
+'''
+
+if matches := re.search(r"^https?://(?www.\.)?twitter\.com/.([a-z0-9_]+)", url, re.IGNORECASE):
+    print(f"username:", matches.group(2))
+
+#   
+
+    
 
 
 
