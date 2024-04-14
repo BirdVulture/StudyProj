@@ -926,7 +926,7 @@ if matches:
     name = matches.group(2) +" " + matches.group(1)
     
 print(f"hello, {name}")
-'''
+
 #twitter https://twitter.com/davidjmalan username from url
 import re
 
@@ -937,7 +937,7 @@ url = input("URL: ").strip()
 #username = re.sub(r"^(https?://)?(www\.|)?twitter\.com/", "", url)
 #print(f"Userneme: {username}")
 
-'''
+
 matches = re.search(r"^https?://(www.\.)?twitter\.com/.+$", url, re.IGNORECASE)
 
 if matches:
@@ -983,7 +983,7 @@ def get_student():
 
 if __name__ == "__main__":
     main()
-'''
+
 #Dictionary
 def main():
     student = get_student()
@@ -1007,7 +1007,7 @@ if __name__ == "__main__":
     main()
 
 #CLASSES
-'''
+
 class Student:
     ...
 
