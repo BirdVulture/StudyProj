@@ -972,14 +972,11 @@ def get_name():
 def get_house():
     return input("House: ") 
     
-
 def get_student():
     name = input("Name: ")
     house = input("House: ")
     return [name, house]
     
-
-
 
 if __name__ == "__main__":
     main()
@@ -1016,7 +1013,7 @@ def main():
     print(f"{student.name} from {student.house}")
 
 def get_student():
-    student = Student()
+    student = Student() # creation object student from class Student
     student.name = input("Name: ")
     student.house = input("House: ")
     return student
@@ -1032,19 +1029,89 @@ def get_student_two():
 #methods 11:17
 
 class Student:
-    def __init__(name, house):
+    def __init__(self, name, house): #initialization attributes in class
         self.name = name
         self.house = house
 
-class StudentTwo:
-    def __init__(self, name, house):
+
+class Student_two:
+    def __init__(self, name, house, patronus): #initialization attributes in class
+        if not name:
+            raise ValueError("Missing name")
+        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+            raise ValueError("Invalid  house")
         self.name = name
         self.house = house
+        self.patronus = patronus
+
+    def __str__(self): #function for transform object to string
+        return f"{self.name} from {self.house}"
+    
+    def charm(self):
+        match self.patronus:
+            case "Stag":
+                return "1"
+            case "Otter":
+                return "2"
+            case _:
+                return "3"
 
 
 def main():
     student = get_student()
     print(f"{student.name} from {student.house}")
+    print(student)
+    print(student.charm())
+
+def get_student():
+    student = Student()
+    student.name = input("Name: ")
+    student.house = input("House: ")
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    patronus = input("Patronus: ")
+    student = Student(name, house, patronus) #Constructor
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    try:
+        return Student(name, house)
+    except Value:
+        ...
+
+#next
+
+class Student:
+    def __init__(self, name, house): #initialization attributes in class
+        self.name = name
+        self.house = house
+
+
+class Student_two:
+    def __init__(self, name, house, ): #initialization attributes in class
+        if not name:
+            raise ValueError("Missing name")
+        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+            raise ValueError("Invalid  house")
+        self.name = name
+        self.house = house
+        
+
+    def __str__(self): #function for transform object to string
+        return f"{self.name} from {self.house}"
+    
+#properties 12:00
+
+def main():
+    student = get_student()
+    print(f"{student.name} from {student.house}")
+    print(student)
+  
 
 def get_student():
     student = Student()
@@ -1057,3 +1124,11 @@ def get_student_two():
     house = input("House: ")
     student = Student(name, house)
     return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    try:
+        return Student(name, house)
+    except Value:
+        ...
