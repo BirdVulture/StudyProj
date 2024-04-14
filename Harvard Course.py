@@ -1084,7 +1084,7 @@ def get_student_two():
     except Value:
         ...
 
-#next
+#properties 12:00
 
 class Student:
     def __init__(self, name, house): #initialization attributes in class
@@ -1105,7 +1105,7 @@ class Student_two:
     def __str__(self): #function for transform object to string
         return f"{self.name} from {self.house}"
     
-#properties 12:00
+
 
 def main():
     student = get_student()
