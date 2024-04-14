@@ -942,15 +942,118 @@ matches = re.search(r"^https?://(www.\.)?twitter\.com/.+$", url, re.IGNORECASE)
 
 if matches:
     print(f"username:", matches.group(2))
-'''
+
 
 if matches := re.search(r"^https?://(?www.\.)?twitter\.com/.([a-z0-9_]+)", url, re.IGNORECASE):
     print(f"username:", matches.group(2))
+'''
+    
 
 #OOP OBJECT-ORIENTED PROGRAMMING 10:38
+#student.py
+'''
+# List and tuple
+def main():
+    name = get_name()
+    house = get_house()
+    name, house = get_student()
+    student = get_student()
+    if student[0] == "Padma": #изменение значения в списке в зависимости от значения ключа
+        student[1] = "Ravenclaw"
 
+    print(f"{name} from {house}")
+    print(f"{student[0]} from {student[1]}")
+
+def get_name():
+    name = input("Name: ")
+    return name
+
+
+def get_house():
+    return input("House: ") 
+    
+
+def get_student():
+    name = input("Name: ")
+    house = input("House: ")
+    return [name, house]
     
 
 
 
+if __name__ == "__main__":
+    main()
+'''
+#Dictionary
+def main():
+    student = get_student()
+    if student[0] == "Padma": #изменение значения в словаре в зависимости от значения ключа
+        student[1] = "Ravenclaw"
+    print(f"{student['name']} from {student['house']}")
 
+
+def get_student():
+    student = {}
+    student["name"] = input("Name: ")
+    student["house"] = input("House: ")
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    return {"name": name, "house": house}
+
+if __name__ == "__main__":
+    main()
+
+#CLASSES
+'''
+class Student:
+    ...
+
+def main():
+    student = get_student()
+    print(f"{student.name} from {student.house}")
+
+def get_student():
+    student = Student()
+    student.name = input("Name: ")
+    student.house = input("House: ")
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    student = Student(name, house)
+    return student
+
+#objects 11:10
+'''
+#methods 11:17
+
+class Student:
+    def __init__(name, house):
+        self.name = name
+        self.house = house
+
+class StudentTwo:
+    def __init__(self, name, house):
+        self.name = name
+        self.house = house
+
+
+def main():
+    student = get_student()
+    print(f"{student.name} from {student.house}")
+
+def get_student():
+    student = Student()
+    student.name = input("Name: ")
+    student.house = input("House: ")
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    student = Student(name, house)
+    return student
