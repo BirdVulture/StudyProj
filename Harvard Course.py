@@ -926,7 +926,7 @@ if matches:
     name = matches.group(2) +" " + matches.group(1)
     
 print(f"hello, {name}")
-'''
+
 #twitter https://twitter.com/davidjmalan username from url
 import re
 
@@ -937,17 +937,47 @@ url = input("URL: ").strip()
 #username = re.sub(r"^(https?://)?(www\.|)?twitter\.com/", "", url)
 #print(f"Userneme: {username}")
 
-'''
+
 matches = re.search(r"^https?://(www.\.)?twitter\.com/.+$", url, re.IGNORECASE)
 
 if matches:
     print(f"username:", matches.group(2))
-'''
+
 
 if matches := re.search(r"^https?://(?www.\.)?twitter\.com/.([a-z0-9_]+)", url, re.IGNORECASE):
     print(f"username:", matches.group(2))
+'''
+# OBJECT ORIENTED PROGRAMMING 10:35
+#file student.py
 
-#   
+'''
+def main():
+    name = get_name()
+    house = get_house()
+    print(f"{name} from {house}")
+'''
+
+def main():  
+    name, house = get_student()
+    
+def get_name():
+    name = input("Name: ")
+    return name
+
+def get_house():
+    return input("House: ")
+
+def get_student():
+    name = input("Name: ")
+    house = input("House: ")
+    return name, house
+
+
+if __name__ == "__main__":
+    main()
+
+#tuple 10:48 кортеж
+
 
     
 
