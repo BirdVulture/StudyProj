@@ -651,4 +651,487 @@ def test_argument2():
 #packages
 '''
 
-#File I/O 7:00
+#File I/O 7:00 
+#LIST
+'''
+names = []
+
+for _ in range(3):
+    name = input("What's your name?")
+    names.append(name)
+
+
+print(f"hello, {name}")
+
+#clever code
+
+names = []
+
+for _ in range(3):
+    names.append(input("What's your name?"))
+
+
+print(f"hello, {name}")
+'''
+#create file
+'''
+name = input("What's your name?")
+
+file = open("names.txt", "w")
+file.write(name)
+file.close()
+
+#clever code
+name = input("What's your name?")
+
+file = open("names.txt", "w")
+file.write(f"{name}\n")
+file.close()
+
+#with
+# add data to file
+name = input("What's your name?")
+
+with open("names.txt", "a") as file: # "a" - add data to file
+    file.write(f"{name}\n") # add data to new line in file
+
+#read lines from file and write it to list
+
+with open("names.txt", "r") as file:
+    lines = file.readlines()
+
+for line in lines:
+    print("hello, ", line.rstrip()) #rstrip remove white spaces
+
+#more compact code
+
+with open("names.txt", "r") as file:
+    for line in file:
+        print("hello, ", line.rstrip())
+
+names = []
+
+with open("names.txt", "r") as file:
+    for line in file:
+        names.append(line.rstrip())
+
+for name in sorted(names):
+    print(f"hello, {name}")
+
+#more compact code
+
+with open("names.txt", "r") as file:
+    for line in sorted(file):
+        print("hello, ", line.rstrip()) 
+'''
+
+#csv file
+# Export from .csv, split each line for two elements by ,
+'''
+with open("students.csv") as file:
+    for line in file:
+        row = line.rstrip().split(",")
+        print(f"{row[0]} is in {row[1]}")
+
+
+with open("students.csv") as file:
+    for line in file:
+        name, house = line.rstrip().split(",")
+        print(f"{name} is in {house}")
+
+
+students = []
+with open ("students.csv") as file:
+    for line in file:
+        name, house =line.rstrip().split(",")
+        students.append(f"{name} is in {house}")
+
+for student in sorted(students):
+    print(student)
+'''
+
+#Dictionaries! key-value
+
+'''
+students = []
+with open ("students.csv") as file:
+    for line in file:
+        name, house =line.rstrip().split(",")
+        student = {}
+        student["name"] = name
+        student["house"] = house
+        students.append(student)
+
+for student in students:
+    print(f"{student['name']} is in {student['house']}")
+
+students = []
+with open ("students.csv") as file:
+    for line in file:
+        name, house =line.rstrip().split(",")
+        student = {}
+        student = {"name": name, "house": house}
+        students.append(student)
+
+for student in students:
+    print(f"{student['name']} is in {student['house']}")
+
+
+#sort dictionaries
+    
+students = []
+with open ("students.csv") as file:
+    for line in file:
+        name, house =line.rstrip().split(",")
+        student = {}
+        student = {"name": name, "house": house}
+        students.append(student)
+
+def get_name(student):
+    return student["name"]
+
+
+for student in sorted(students, key=get_name):
+    print(f"{student['name']} is in {student['house']}")
+
+
+#with lambda function
+
+students = []
+with open ("students.csv") as file:
+    for line in file:
+        name, house =line.rstrip().split(",")
+        student = {}
+        student = {"name": name, "house": house}
+        students.append(student)
+
+
+for student in sorted(students, key=lambda student: student[name]):
+    print(f"{student['name']} is in {student['house']}")
+
+
+#csv library
+    
+import csv
+
+students = []
+with open ("students.csv") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        students.append({"name": row[0], "home": row[1]})
+
+
+#back the dictionary 
+
+import csv
+
+students = []
+with open ("students.csv") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        students.append({"name": row["name"], "home": row["home"]})
+
+#8:14
+
+import csv
+
+name = input("What's your name? ")
+home = input("Where's your home? ")
+
+with open("students.csv", "a") as file:
+    writer = csv.writer(file)
+    writer.writerow([name, home])
+
+#
+
+import csv
+
+name = input("What's your name? ")
+home = input("Where's your home? ")
+
+with open("students.csv", "a") as file:
+    writer = csv.DictWriter(file, fieldnames=["name", "home"])
+    writer.writerow({"name": name, "home": home})
+
+
+#Images
+import sys
+
+from PIL import Image
+
+images = []
+
+for arg in sys.argv[1:]:
+    image = Image.open(arg)
+    images.append(image)
+
+images[0].save(
+    "costumes.gif", save_all=True, append_images=[images[1]], duration=200, loop=0
+)
+'''
+
+# REGULAR EXPRESSIONS 8:30
+
+'''
+email = input("What's your email?").strip()
+
+
+if "@" in email and "." in   email: 
+    print("Valid")
+else:
+    print("Invalid")
+
+username, domain = email.split("@") 
+
+#if username and ". " in domain: #var 1
+
+if username and domain.endswith(".edu"): #var 2    
+    print("valid")
+else:
+    print("Invalid")
+'''
+
+#re - library for regular expressions
+
+import re
+'''
+email = input("What's your email?").strip()
+#if re.search(r".+@.+\.edu", email):
+#if re.search(r".+@.+\.edu", email):
+#if re.search(r"^[^@]+@[^@]+\.edu$", email):
+#if re.search(r"^[a-zA-Z0-9_\.]+@[a-zA-Z0-9_\.]+\.edu$", email):
+if re.search(r"^(\w|\.)+@(\w+\.)?\w+\.(edu|com|gov)$", email):   
+
+    print("Valid")
+else:
+    print("Invalid")
+
+'''
+'''
+name = input("What's your name? ").strip()
+if "," in name:
+    last, first = name.split(", ")
+    name = f"{first} {last} "
+print(f"hello, {name}")
+
+import re
+matches = re.search(r"^(.+), *(.+)$", name)
+if matches:
+    last = matches.groups(1)
+    first = matches.group(2)
+    name = f"{first} {last}"
+
+#another way
+if matches:
+    name = matches.group(2) +" " + matches.group(1)
+    
+print(f"hello, {name}")
+
+#twitter https://twitter.com/davidjmalan username from url
+import re
+
+url = input("URL: ").strip()
+
+#username = url.replace("https://twitter.com/", "")
+#username = url.replaceprefix("https://twitter.com/")
+#username = re.sub(r"^(https?://)?(www\.|)?twitter\.com/", "", url)
+#print(f"Userneme: {username}")
+
+
+matches = re.search(r"^https?://(www.\.)?twitter\.com/.+$", url, re.IGNORECASE)
+
+if matches:
+    print(f"username:", matches.group(2))
+
+
+if matches := re.search(r"^https?://(?www.\.)?twitter\.com/.([a-z0-9_]+)", url, re.IGNORECASE):
+    print(f"username:", matches.group(2))
+'''
+    
+
+#OOP OBJECT-ORIENTED PROGRAMMING 10:38
+#student.py
+'''
+# List and tuple
+def main():
+    name = get_name()
+    house = get_house()
+    name, house = get_student()
+    student = get_student()
+    if student[0] == "Padma": #изменение значения в списке в зависимости от значения ключа
+        student[1] = "Ravenclaw"
+
+    print(f"{name} from {house}")
+    print(f"{student[0]} from {student[1]}")
+
+def get_name():
+    name = input("Name: ")
+    return name
+
+
+def get_house():
+    return input("House: ") 
+    
+def get_student():
+    name = input("Name: ")
+    house = input("House: ")
+    return [name, house]
+    
+
+if __name__ == "__main__":
+    main()
+
+#Dictionary
+def main():
+    student = get_student()
+    if student[0] == "Padma": #изменение значения в словаре в зависимости от значения ключа
+        student[1] = "Ravenclaw"
+    print(f"{student['name']} from {student['house']}")
+
+
+def get_student():
+    student = {}
+    student["name"] = input("Name: ")
+    student["house"] = input("House: ")
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    return {"name": name, "house": house}
+
+if __name__ == "__main__":
+    main()
+
+#CLASSES
+
+class Student:
+    ...
+
+def main():
+    student = get_student()
+    print(f"{student.name} from {student.house}")
+
+def get_student():
+    student = Student() # creation object student from class Student
+    student.name = input("Name: ")
+    student.house = input("House: ")
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    student = Student(name, house)
+    return student
+
+#objects 11:10
+'''
+#methods 11:17
+
+class Student:
+    def __init__(self, name, house): #initialization attributes in class
+        self.name = name
+        self.house = house
+
+
+class Student_two:
+    def __init__(self, name, house, patronus): #initialization attributes in class
+        if not name:
+            raise ValueError("Missing name")
+        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+            raise ValueError("Invalid  house")
+        self.name = name
+        self.house = house
+        self.patronus = patronus
+
+    def __str__(self): #function for transform object to string
+        return f"{self.name} from {self.house}"
+    
+    def charm(self):
+        match self.patronus:
+            case "Stag":
+                return "1"
+            case "Otter":
+                return "2"
+            case _:
+                return "3"
+
+
+def main():
+    student = get_student()
+    print(f"{student.name} from {student.house}")
+    print(student)
+    print(student.charm())
+
+def get_student():
+    student = Student()
+    student.name = input("Name: ")
+    student.house = input("House: ")
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    patronus = input("Patronus: ")
+    student = Student(name, house, patronus) #Constructor
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    try:
+        return Student(name, house)
+    except Value:
+        ...
+
+#properties 12:00
+
+class Student:
+    def __init__(self, name, house): #initialization attributes in class
+        self.name = name
+        self.house = house
+
+
+class Student_two:
+    def __init__(self, name, house, ): #initialization attributes in class
+        if not name:
+            raise ValueError("Missing name")
+        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+            raise ValueError("Invalid  house")
+        self.name = name
+        self.house = house
+        
+
+    def __str__(self): #function for transform object to string
+        return f"{self.name} from {self.house}"
+    
+
+
+def main():
+    student = get_student()
+    print(f"{student.name} from {student.house}")
+    print(student)
+  
+
+def get_student():
+    student = Student()
+    student.name = input("Name: ")
+    student.house = input("House: ")
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    student = Student(name, house)
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    try:
+        return Student(name, house)
+    except Value:
+        ...
+
+
+# 12:00
