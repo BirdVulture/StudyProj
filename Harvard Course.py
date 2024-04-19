@@ -947,6 +947,7 @@ if matches:
 if matches := re.search(r"^https?://(?www.\.)?twitter\.com/.([a-z0-9_]+)", url, re.IGNORECASE):
     print(f"username:", matches.group(2))
 '''
+<<<<<<< HEAD
 # OBJECT ORIENTED PROGRAMMING 10:35
 #file student.py
 
@@ -978,9 +979,193 @@ if __name__ == "__main__":
 
 #tuple 10:48 кортеж
 
+=======
+    
 
+#OOP OBJECT-ORIENTED PROGRAMMING 10:38
+#student.py
+'''
+# List and tuple
+def main():
+    name = get_name()
+    house = get_house()
+    name, house = get_student()
+    student = get_student()
+    if student[0] == "Padma": #изменение значения в списке в зависимости от значения ключа
+        student[1] = "Ravenclaw"
+>>>>>>> 62f87cc50eb7764849bd6f98e8d719faf115a699
+
+    print(f"{name} from {house}")
+    print(f"{student[0]} from {student[1]}")
+
+def get_name():
+    name = input("Name: ")
+    return name
+
+
+def get_house():
+    return input("House: ") 
+    
+def get_student():
+    name = input("Name: ")
+    house = input("House: ")
+    return [name, house]
+    
+
+if __name__ == "__main__":
+    main()
+
+#Dictionary
+def main():
+    student = get_student()
+    if student[0] == "Padma": #изменение значения в словаре в зависимости от значения ключа
+        student[1] = "Ravenclaw"
+    print(f"{student['name']} from {student['house']}")
+
+
+def get_student():
+    student = {}
+    student["name"] = input("Name: ")
+    student["house"] = input("House: ")
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    return {"name": name, "house": house}
+
+if __name__ == "__main__":
+    main()
+
+#CLASSES
+
+class Student:
+    ...
+
+def main():
+    student = get_student()
+    print(f"{student.name} from {student.house}")
+
+def get_student():
+    student = Student() # creation object student from class Student
+    student.name = input("Name: ")
+    student.house = input("House: ")
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    student = Student(name, house)
+    return student
+
+#objects 11:10
+'''
+#methods 11:17
+
+class Student:
+    def __init__(self, name, house): #initialization attributes in class
+        self.name = name
+        self.house = house
+
+
+class Student_two:
+    def __init__(self, name, house, patronus): #initialization attributes in class
+        if not name:
+            raise ValueError("Missing name")
+        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+            raise ValueError("Invalid  house")
+        self.name = name
+        self.house = house
+        self.patronus = patronus
+
+    def __str__(self): #function for transform object to string
+        return f"{self.name} from {self.house}"
+    
+    def charm(self):
+        match self.patronus:
+            case "Stag":
+                return "1"
+            case "Otter":
+                return "2"
+            case _:
+                return "3"
+
+
+def main():
+    student = get_student()
+    print(f"{student.name} from {student.house}")
+    print(student)
+    print(student.charm())
+
+def get_student():
+    student = Student()
+    student.name = input("Name: ")
+    student.house = input("House: ")
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    patronus = input("Patronus: ")
+    student = Student(name, house, patronus) #Constructor
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    try:
+        return Student(name, house)
+    except Value:
+        ...
+
+#properties 12:00
+
+class Student:
+    def __init__(self, name, house): #initialization attributes in class
+        self.name = name
+        self.house = house
+
+
+class Student_two:
+    def __init__(self, name, house, ): #initialization attributes in class
+        if not name:
+            raise ValueError("Missing name")
+        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+            raise ValueError("Invalid  house")
+        self.name = name
+        self.house = house
+        
+
+    def __str__(self): #function for transform object to string
+        return f"{self.name} from {self.house}"
     
 
 
+def main():
+    student = get_student()
+    print(f"{student.name} from {student.house}")
+    print(student)
+  
+
+def get_student():
+    student = Student()
+    student.name = input("Name: ")
+    student.house = input("House: ")
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    student = Student(name, house)
+    return student
+
+def get_student_two():
+    name = input("Name: ")
+    house = input("House: ")
+    try:
+        return Student(name, house)
+    except Value:
+        ...
 
 
+# 12:00
