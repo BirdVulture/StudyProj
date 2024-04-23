@@ -947,7 +947,6 @@ if matches:
 if matches := re.search(r"^https?://(?www.\.)?twitter\.com/.([a-z0-9_]+)", url, re.IGNORECASE):
     print(f"username:", matches.group(2))
 '''
-<<<<<<< HEAD
 # OBJECT ORIENTED PROGRAMMING 10:35
 #file student.py
 
@@ -979,7 +978,6 @@ if __name__ == "__main__":
 
 #tuple 10:48 кортеж
 
-=======
     
 
 #OOP OBJECT-ORIENTED PROGRAMMING 10:38
@@ -993,7 +991,6 @@ def main():
     student = get_student()
     if student[0] == "Padma": #изменение значения в списке в зависимости от значения ключа
         student[1] = "Ravenclaw"
->>>>>>> 62f87cc50eb7764849bd6f98e8d719faf115a699
 
     print(f"{name} from {house}")
     print(f"{student[0]} from {student[1]}")
@@ -1116,7 +1113,7 @@ def get_student_two():
     try:
         return Student(name, house)
     except Value:
-        ...
+        Value = 1
 
 
 
@@ -1165,7 +1162,7 @@ def get_student_two():
     try:
         return Student(name, house)
     except Value:
-        ...
+        Value = 1
 
 
 #properties 12:00
