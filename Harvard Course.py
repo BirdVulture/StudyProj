@@ -947,6 +947,39 @@ if matches:
 if matches := re.search(r"^https?://(?www.\.)?twitter\.com/.([a-z0-9_]+)", url, re.IGNORECASE):
     print(f"username:", matches.group(2))
 '''
+<<<<<<< HEAD
+# OBJECT ORIENTED PROGRAMMING 10:35
+#file student.py
+
+'''
+def main():
+    name = get_name()
+    house = get_house()
+    print(f"{name} from {house}")
+'''
+
+def main():  
+    name, house = get_student()
+    
+def get_name():
+    name = input("Name: ")
+    return name
+
+def get_house():
+    return input("House: ")
+
+def get_student():
+    name = input("Name: ")
+    house = input("House: ")
+    return name, house
+
+
+if __name__ == "__main__":
+    main()
+
+#tuple 10:48 кортеж
+
+=======
     
 
 #OOP OBJECT-ORIENTED PROGRAMMING 10:38
@@ -960,6 +993,7 @@ def main():
     student = get_student()
     if student[0] == "Padma": #изменение значения в списке в зависимости от значения ключа
         student[1] = "Ravenclaw"
+>>>>>>> 62f87cc50eb7764849bd6f98e8d719faf115a699
 
     print(f"{name} from {house}")
     print(f"{student[0]} from {student[1]}")
@@ -1084,7 +1118,7 @@ def get_student_two():
     except Value:
         ...
 
-#properties 12:00
+
 
 class Student:
     def __init__(self, name, house): #initialization attributes in class
@@ -1134,4 +1168,31 @@ def get_student_two():
         ...
 
 
-# 12:00
+#properties 12:00
+
+class Student_two:
+    def __init__(self, name, house, ): #initialization attributes in class
+        if not name:
+            raise ValueError("Missing name")
+        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+            raise ValueError("Invalid  house")
+        self.name = name
+        self.house = house
+        
+
+    def __str__(self): #function for transform object to string
+        return f"{self.name} from {self.house}"
+    
+    #Getter
+    def house(self):
+        return self.house
+    
+    #Setter
+    def house(self, house):
+        self.house = house
+
+    def main():
+        student = get_student()
+
+        print(student)
+        
