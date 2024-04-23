@@ -1084,7 +1084,7 @@ def get_student_two():
     except Value:
         ...
 
-#properties 12:00
+
 
 class Student:
     def __init__(self, name, house): #initialization attributes in class
@@ -1134,4 +1134,31 @@ def get_student_two():
         ...
 
 
-# 12:00
+#properties 12:00
+
+class Student_two:
+    def __init__(self, name, house, ): #initialization attributes in class
+        if not name:
+            raise ValueError("Missing name")
+        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+            raise ValueError("Invalid  house")
+        self.name = name
+        self.house = house
+        
+
+    def __str__(self): #function for transform object to string
+        return f"{self.name} from {self.house}"
+    
+    #Getter
+    def house(self):
+        return self.house
+    
+    #Setter
+    def house(self, house):
+        self.house = house
+
+    def main():
+        student = get_student()
+
+        print(student)
+        
