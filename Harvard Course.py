@@ -1117,22 +1117,26 @@ def get_student_two():
 
 
 
+#inncpsuliation 11:28
+
+#raiese (for exceptions)
+
 class Student:
     def __init__(self, name, house): #initialization attributes in class
         self.name = name
         self.house = house
 
-
+#__init__
 class Student_two:
-    def __init__(self, name, house, ): #initialization attributes in class
+    def __init__(self, name, house, ): #initialization of attributes and validation values in class
         if not name:
             raise ValueError("Missing name")
         if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
-            raise ValueError("Invalid  house")
+            raise ValueError("Invalid  house") #raise exception
         self.name = name
         self.house = house
         
-
+#__str__  
     def __str__(self): #function for transform object to string
         return f"{self.name} from {self.house}"
     
@@ -1181,15 +1185,28 @@ class Student_two:
         return f"{self.name} from {self.house}"
     
     #Getter
+    @property
     def house(self):
-        return self.house
+        return self._house
     
     #Setter
+    @house.setter
     def house(self, house):
-        self.house = house
+        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+            raise ValueError("Invalid house")
+        self._house = house
 
-    def main():
-        student = get_student()
 
-        print(student)
-        
+def main():
+    student = get_student()
+
+    print(student)
+
+
+def get_student():
+    student = Student()
+    student.name = input("Name: ")
+    student.house = input("House: ")
+    return student
+
+#classmethod 12:29
