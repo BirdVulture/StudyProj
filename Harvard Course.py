@@ -1213,6 +1213,7 @@ def get_student():
 '''
 
 #classmethod 12:29
+''' 
 import random
 
 class Hat:
@@ -1230,6 +1231,8 @@ hat.sort("Harry")
 
 #classmethod
 
+
+
 class Hat:
    
     houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
@@ -1241,3 +1244,62 @@ class Hat:
 
 
 hat = Hat()
+class Hat:
+    def __init__(self):
+        self.houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
+
+    
+    def sort(self, name):
+        house = random.choice(self.houses)
+        print(name, "is in", house)
+
+
+
+Hat.sort("Harry")
+
+#####
+
+class Student:
+    def __init__(self, name, house): #initialization attributes in class
+        self.name = name
+        self.house = house
+
+    def __str__(self): #function for transform object to string
+        return f"{self.name} from {self.house}"
+    
+    @classmethod
+    def get(cls):
+        name = input("Name: ")
+        house = input("House: ")
+        return cls(name, house)
+    
+def main():
+    student = Student.get()
+    print(student)
+
+'''
+
+#Inheritance 12:57
+
+class Wizard:
+    def __init__(self, name): 
+        if not name:
+            raise ValueError("Missing name")
+        self.name = name
+
+class Student(Wizard):
+    def __init__(self, name, house):
+        super().__init__(name)  
+        self.house = house
+
+
+class Professor(Wizard):
+    def __init__(self, name, subject):
+        super().__init__(name)
+        self.subject = subject
+
+wizard = Wizard("Albus")
+student = Student("Harry", "Gryffindor")
+professor = Professor("Severus", "Defence")
+
+#operator overloading 13:12
