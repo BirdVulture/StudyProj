@@ -1054,11 +1054,12 @@ def get_student_two():
     house = input("House: ")
     student = Student(name, house)
     return student
-
-#objects 11:10
 '''
-#methods 11:17
+#Creating objects from classes 11:10
+#attributes is a instance variables 11:13
 
+#methods 11:17
+'''
 class Student:
     def __init__(self, name, house): #initialization attributes in class
         self.name = name
@@ -1169,7 +1170,7 @@ def get_student_two():
         Value = 1
 
 
-#properties 12:00
+#properties 12:00 decorators
 
 class Student_two:
     def __init__(self, name, house, ): #initialization attributes in class
@@ -1209,4 +1210,34 @@ def get_student():
     student.house = input("House: ")
     return student
 
+'''
+
 #classmethod 12:29
+import random
+
+class Hat:
+    def __init__(self):
+        self.houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
+
+    
+    def sort(self, name):
+        house = random.choice(self.houses)
+        print(name, "is in", house)
+
+
+hat = Hat()
+hat.sort("Harry")
+
+#classmethod
+
+class Hat:
+   
+    houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
+
+    @classmethod
+    def sort(cls, name):
+        house = random.choice(cls.houses)
+        print(name, "is in", house)
+
+
+hat = Hat()
