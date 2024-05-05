@@ -600,7 +600,7 @@ if __name__ == "__main__":
 '''
 #pytest 6:25
 
-#pyton3 pip inastall pytest
+# pip3 inastall pytest
 '''
 from calculator import square
     assert square(2) == 4
@@ -1280,7 +1280,7 @@ def main():
 '''
 
 #Inheritance 12:57
-
+'''
 class Wizard:
     def __init__(self, name): 
         if not name:
@@ -1303,3 +1303,178 @@ student = Student("Harry", "Gryffindor")
 professor = Professor("Severus", "Defence")
 
 #operator overloading 13:12
+#Vault
+
+class Vault:
+    def __init__(self, galleons=0, sickles=0, knuts=0):
+        self.galleons = galleons
+        self.sickles = sickles
+        self.knuts = knuts
+
+    def __str__(self):
+        return f"{self.galleons} Galleons, {self.sickles} Sickles, {self.knuts} Knuts"  
+
+    def __add__(self, other):
+        galleons = self.galleons + other.galleons
+        sickles = self.sickles + other.sickles
+        knuts = self.knuts + other.knuts
+        return Vault(galleons, sickles, knuts) 
+
+potter = Vault(100, 50, 25)
+print(potter)
+
+weasley = Vault(25, 50, 100)
+print(weasley)
+
+
+
+total = potter + weasley
+
+print(total)
+
+#set 13:30
+
+students = [
+    {"name": "Hernione", "house": "Gryffindor"},
+    {"name": "Harry", "house": "Gryffindor"},
+    {"name": "Ron", "house": "Gryffindor"},
+    {"name": "Draco", "house": "Slytherin"},
+    {"name": "Padma", "house": "Ravenclaw"}
+]
+
+houses = [] #unic houses 1
+for student in students:
+    if student["house"] not in houses:
+        houses.append(student["house"])
+
+houses = set() #unic houses set
+for student in students:
+    houses.add(student["house"])
+
+for house in sorted(houses):
+    print(house)
+
+'''
+
+#GLOBAL VARIABLES
+
+balance = 0
+
+def main():
+    print("Balance", balance)
+    deposit(100)
+    withdraw(50)
+    print("Balance", balance)
+
+def deposit(n):
+    global balance
+    balance += n
+
+def withdraw(n):
+    global balance
+    balance -= n
+
+
+if __name__ == "__main__":
+    main()
+
+
+class Account:
+    def __init__(self):
+        self._balance = 0
+
+    @property
+    def balance(self):
+        return self._balance
+    
+    def deposit(self, n):
+        self._balance += n
+
+    def withdraw(self, n):
+        self._balance -= n
+
+    def main():
+        account = Account()
+        print("Balance: ", account.balance )
+        account.deposit(100)
+        account.withdraw(50)
+        print("Balance: ", account.balance)
+
+if __name__ == "__main__":
+    main()
+
+#constants
+
+MEOWS = 3 #constant
+
+for _ in range(MEOWS):
+    print("meow")
+
+
+###
+
+class Cat:
+    MEOWS = 3
+
+    def meow(self):
+        for _ in range(Cat.MEOWS):
+            print("meow")
+
+cat = Cat()
+cat.meow()
+
+
+#type hints start program with mypy  
+#pip3 install mypy
+
+def meow(n: int) -> None:
+    for _ in range(n):
+        print(meow)
+
+def meow(n: int) -> str:
+        return "meow\n" * n #multipication of strings
+ 
+
+number: int = int(input("Nunber: "))
+
+meow(number)
+
+
+#docstrings # - documentation
+
+def meow(n: int) -> str:
+        
+        return "meow\n" * n #multipication of strings
+ 
+
+number: int = int(input("Nunber: "))
+
+meow(number)
+
+#use command line arguments 14:23
+
+import sys
+
+if len(sys.srgv) ==1:
+    print("meow")
+elif len(sys.argv) == 3 and sys.argv[1] == "-n":
+    n = int(sys.argv[2])
+    for _ in range(n):
+        print(meow)
+else:
+    print("usage: meows.py")
+
+
+#argparse analizis command line arguments
+
+import argparse
+
+parser = argparse.ArgumentParser(deskription="Meow like a cat")
+
+parser.add_argument("-n", help="number of times to meow")
+args = parser.parse_args()
+
+for _ in range(int(args.n)):
+    print("meow")
+
+#unpacking 14:39
