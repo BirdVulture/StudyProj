@@ -1478,3 +1478,117 @@ for _ in range(int(args.n)):
     print("meow")
 
 #unpacking 14:39
+
+first, last = input("What's your name? ").split(" ")
+
+print(f"helo, {first}")
+
+
+def total(galleons, sickles, knuts):
+    return (galleons * 17 +sickles) *29 + knuts
+
+coins = [100, 50, 25]
+#list
+print(total(coins[0], coins[1], coins[2]), "Knuts")
+#unpack list
+print(total(*coins), "Knuts") # * - for unpack list to multiple values
+
+#dictionary
+
+coins = {"galleons": 100, "sickles": 50, "knuts": 25}
+
+print(total(coins["galleons"], coins["sickles"], coins["knuts"]), "Knuts")
+
+#unpack dictionary
+print(total(**coins), "Knuts")
+
+
+#### unpack all elements
+def f(*args, **kwargs):
+    print("Positional:", args)
+
+f(100, 50, 25)
+
+
+### 15:00 for diagnostic
+def f(*args, **kwargs):
+    print("Named:", kwargs)
+
+f(galleons=100, sickles= 50, knuts=25)
+
+
+#map
+
+...
+
+#list comprehensions
+
+students = [
+    {"name": "Hernione", "house": "Gryffindor"},
+    {"name": "Harry", "house": "Gryffindor"},
+    {"name": "Ron", "house": "Gryffindor"},
+    {"name": "Draco", "house": "Slytherin"},
+    {"name": "Padma", "house": "Ravenclaw"}
+]
+
+griffindors = [
+    student["name"] for student in students if student["house" == "Gryffindor"]
+]
+
+for gryffindor in sorted(griffindors):
+    print(gryffindor)
+
+#filter 15:21
+
+students = [
+    {"name": "Hernione", "house": "Gryffindor"},
+    {"name": "Harry", "house": "Gryffindor"},
+    {"name": "Ron", "house": "Gryffindor"},
+    {"name": "Draco", "house": "Slytherin"},
+    {"name": "Padma", "house": "Ravenclaw"}
+]
+
+def is_gryffindor(s):
+    return s["house"] == "Gryffindor"
+
+
+gryffindors = filter(is_gryffindor, students)
+
+for gryffindor in sorted(griffindors, key=lambda s: s["name"]):
+    print(gryffindor["name"])
+
+#dictionary comprehensions 15:28
+
+students = ["Hermione", "Harry", "Ron"]
+
+gryffindors = []
+
+for student in students:
+    gryffindors.append({"name:": student, "house": "Gryffindor"})
+
+###
+gryffindors = [{"name:": student, "house": "Gryffindor"} for student in students]
+
+### ictionary comprehensions
+
+gryffindors = {student: "Gryffindor" for student in students}
+
+print(gryffindors)
+
+#enumerate
+...
+
+#generators 15:37
+
+def main():
+    n = int(input("What's n? "))
+    for s in sheep(n):
+        print(s)
+
+def sheep(n): # iterator function returns litlle bit of data, not all of data at a time
+    for i in range(n):
+        yield "sheep" * i
+
+if __name__ == "__main__":
+    main()
+
