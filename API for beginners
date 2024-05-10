@@ -1,0 +1,43 @@
+#https://www.youtube.com/watch?v=WXsD0ZgxjRw&list=PLWKjhJtqVAbn21gs5UnLhCQ82f923WCgM&index=7&t=3473s
+'''
+GUI - grafical user interface 
+API - aplication programming interface
+remote API
+REST - represetational state transfer
+RSTful
+browsr is a web client
+URL -universal resourse locator 
+URI universal resourse identifier
+HTTP -Hyper text transfer protocol - how to communnicate^ how to respond to my request
+HTTP Verb GET(request)
+Response - The body is the most important part of the response
+HTTP Verb POST (submiting or posting data to the server)
+
+Header ( list of HTTP header fields -Wiki)
+request and response have  headers
+cashing
+authentication inforation embed in request using a header
+status code
+
+REST constraints
+1 Client-Server Archtecture
+2 Statelessness
+3 Cashability
+4 Layered System
+5 Code on demand
+6 Uniform interface
+
+
+HTTP Vebrs
+GET  Read
+POST Create
+PUT Update
+PATCH 
+Delete Delete 
+
+
+
+
+'''
+
+ 

@@ -1,3 +1,6 @@
+#https://www.youtube.com/watch?v=nLRL_NcnK-4&t=52792s
+
+
 #Documentation
 #https://docs.python.org/3.12/library/index.html
   
