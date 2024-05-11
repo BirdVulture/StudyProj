@@ -56,12 +56,12 @@ class Machine:
 
 
     
-store_one = Store(int(input("Введите количество сырья ")))
+store_one = Store(int(input("Введите количество сырья "))) #Склад готовой продукции
 print("Остаток на складе", store_one.balance)
 
-machine_one = Machine(2)
+machine_one = Machine(2) #станок
 
-store_two = Store(0)
+store_two = Store(0) #Склад готовой продукции
 
 
 machine_one.production()
