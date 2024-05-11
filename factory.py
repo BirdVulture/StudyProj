@@ -17,6 +17,10 @@ class Store:
                   
         return out
     
+    def show_balance(self):
+        return self.balance
+    
+    
         
 
 
@@ -36,14 +40,15 @@ class Machine:
     
     def production(self): #Производство, работает пока на складе сырья остаток больше 0. Готовая продукция складывается на склад готовой продукции
         self.raw = store_one.output()
-        print ("Вход на станок", self.raw)
+        
         if self.raw > 0:
+            print ("Вход на станок", self.raw)
             self.complete = self.readiness()
             print(self.complete)
             if self.complete == 10:
                 store_two.input()
-                print("Остаток на складе сырья", store_one.balance)
-                print("Остаток на складе продукции", store_two.balance)
+                print("Остаток на складе сырья", store_one.show_balance())
+                print("Остаток на складе продукции", store_two.show_balance())
                 self.production()
 
         
