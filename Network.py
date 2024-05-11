@@ -1,9 +1,13 @@
-#А - целочисленный массив  с индексами от 0 до 5
-A = [3, 1, 2, 2, 0, 1]
+import time
 
-rez = A[0]
+def readiness():
+        ready = 0
+        while ready <= 100:
+            print(ready)
+            time.sleep(0.1)
+            ready += 1
 
-for i in range(1, len(A)):
-    if rez < A[i] :
-        rez = A[i]
-print(rez)
+        return ready
+
+readiness()
+
