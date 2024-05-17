@@ -1,3 +1,8 @@
+#https://www.psycopg.org
+#pip install --upgrade pip           # upgrade pip to at least 20.3
+#pip install "psycopg[binary]"       # remove [binary] for PyPy
+
+
 import psycopg
 
 conn = psycopg.connect(dbname="littlebird1", user="user1", password="*******", host="79.174.88.184", port="17490")
