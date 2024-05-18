@@ -7,7 +7,7 @@ import psycopg
 
 conn = psycopg.connect(dbname="littlebird1", user="user1", password="*******", host="79.174.88.184", port="17490")
 cursor = conn.cursor()
-
+'''
 # СОЗДАНИЕ ТАБЛИЦЫ
 # создаем таблицу people
 cursor.execute("CREATE TABLE people (id SERIAL PRIMARY KEY, name VARCHAR(50),  age INTEGER)")
@@ -102,6 +102,7 @@ conn.commit()
 cursor.execute("SELECT * FROM people")
 print(cursor.fetchall())    # [(1, 'Tomas', 38), (4, 'Alice', 33)]
 
+'''
 cursor.close()
 conn.close()
 
