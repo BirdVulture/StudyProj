@@ -1,0 +1,1 @@
+manual.cs50.io manual c
