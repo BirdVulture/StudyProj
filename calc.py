@@ -11,12 +11,7 @@ def input_value(seq):
 
 #ввод операции
 def input_operation():
-    operations = ("*", "/", "+", "-")
     user_operation = input('Введите операцию "*", "/", "+", "-": ')
-    if user_operation not in operations:
-        print("Введите операцию повторно")
-        input_operation()      
-
     return user_operation
 
 #сложение
