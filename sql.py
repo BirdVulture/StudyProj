@@ -89,3 +89,10 @@ print(f"{favorite}: {counts[favorite]}")
 #sqlite3 favorites.db create a new DB
 #.mode csv 
 #.import favorites.csv favorites
+#.schema //table format
+#SELECT * FROM favorites;
+#SELECT language FROM favorites;
+#SELECT language FROM favorites LIMIT 10; //only 10 values
+#SELECT COUNT(*) FROM favorites; // count number of rows
+#SELECT DISTINCT(language) FROM favorites; //return unique values from colomn
+#SELECT COUNT(DISTINCT(language)) FROM favorites; //return number of unique values from colomn
