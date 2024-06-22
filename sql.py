@@ -67,6 +67,7 @@ for favorite, count in counts.most_common():
      print(f"{favorite}: {count}")
 
 '''
+'''
 ##!!!! input and count 
 import csv
 from collections import Counter
@@ -82,3 +83,9 @@ with open("favorites.csv", "r") as file:
 
 favorite = input("Favorite: ")
 print(f"{favorite}: {counts[favorite]}")
+'''
+
+#sqlite3 //terminal command
+#sqlite3 favorites.db create a new DB
+#.mode csv 
+#.import favorites.csv favorites
