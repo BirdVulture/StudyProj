@@ -85,8 +85,9 @@ favorite = input("Favorite: ")
 print(f"{favorite}: {counts[favorite]}")
 '''
 
-#sqlite3 //terminal command
-#sqlite3 favorites.db create a new DB
+#sqlite3 //terminal command HEADER
+
+#sqlite3 favorites.db //create a new DB
 #.mode csv 
 #.import favorites.csv favorites
 #.schema //table format
@@ -96,3 +97,16 @@ print(f"{favorite}: {counts[favorite]}")
 #SELECT COUNT(*) FROM favorites; // count number of rows
 #SELECT DISTINCT(language) FROM favorites; //return unique values from colomn
 #SELECT COUNT(DISTINCT(language)) FROM favorites; //return number of unique values from colomn
+#SELECT COUNT(*) FROM favorites WHERE language = 'C';
+#SELECT COUNT(*) FROM favorites WHERE language = 'C'AND problem = 'C';
+#SELECT language, COUNT(*) FROM favorites GROUP BY language;
+#SELECT language, COUNT(*) FROM favorites GROUP BY language ORDER BY COUNT(*);
+#SELECT language, COUNT(*) FROM favorites GROUP BY language ORDER BY COUNT(*) ASC; //from smollest to biggest
+#SELECT language, COUNT(*) FROM favorites GROUP BY language ORDER BY COUNT(*) DESC; // from biggest to smollest
+#SELECT language, COUNT(*) AS n FROM favorites GROUP BY language ORDER BY n DESC; //time 51:50
+#blueprint# INSERT INTO table (colomn, ...) VALUES (value, ...);
+#INSERT INTO favorites (language, problem) VALUES ('SQL', 'Fiftyville');
+#DELETE FROM favorites WHERE Timestamp IS NULL;
+#blueprint#  UPDATE table SET colomn = value WHERE condition;
+#DELETE FROM favorites; // delete all data
+#UPDATE favorites SET problem = 'TEST' WHERE language = 'C';
