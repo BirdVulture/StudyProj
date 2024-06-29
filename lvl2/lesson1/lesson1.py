@@ -1,6 +1,7 @@
 #https://drive.google.com/drive/folders/1v1f0UO200TmzRXMd1YczYwYjEROIn1Vk?usp=drive_link
 #pip install arcade
 #https://pypi.org
+#https://api.arcade.academy/en/latest/api/window.html#arcade.Window
 
 import arcade 
 
