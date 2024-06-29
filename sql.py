@@ -110,3 +110,20 @@ print(f"{favorite}: {counts[favorite]}")
 #blueprint#  UPDATE table SET colomn = value WHERE condition;
 #DELETE FROM favorites; // delete all data
 #UPDATE favorites SET problem = 'TEST' WHERE language = 'C';
+
+
+#sqlite3 shows.db
+#SELECT * FROM shows
+#CREATE TABLE shows (id INTEGER, title TEXT NOT NULL, year NUMERIC, episodes INTEGER, PRIMARY KEY(Id)) 
+#INSERT INTO shows (id, title, year, episodes) VALUES ('62614','Zeg ns Aaa ', '1981', '227')
+
+#BLOB //Binary large object
+# INTEGER
+#NUMERIC
+#REAL
+#TEXT
+#NOT NULL UNIQUE
+#PRIMARY KEY is ID
+#FOREIGN KEY
+
+#
