@@ -1,4 +1,5 @@
 '''
+# https://www.youtube.com/watch?v=1RCMYG8RUSE&t=4665s
 import csv 
 with open("favorites.csv", "r") as file:
     #1 reader = csv.reader(file)
@@ -113,9 +114,9 @@ print(f"{favorite}: {counts[favorite]}")
 
 
 #sqlite3 shows.db
-#SELECT * FROM shows
-#CREATE TABLE shows (id INTEGER, title TEXT NOT NULL, year NUMERIC, episodes INTEGER, PRIMARY KEY(Id)) 
-#INSERT INTO shows (id, title, year, episodes) VALUES ('62614','Zeg ns Aaa ', '1981', '227')
+#SELECT * FROM shows;
+#CREATE TABLE shows (id INTEGER, title TEXT NOT NULL, year NUMERIC, episodes INTEGER, PRIMARY KEY(Id));
+#INSERT INTO shows (id, title, year, episodes) VALUES ('62614','Zeg ns Aaa ', '1981', '227');
 
 #BLOB //Binary large object
 # INTEGER
@@ -126,4 +127,52 @@ print(f"{favorite}: {counts[favorite]}")
 #PRIMARY KEY is ID
 #FOREIGN KEY
 
-#
+#SELECT * FROM ratings WHERE rating >= 6.0 LIMIT 10; 
+#SELECT show_id FROM ratings WHERE rating >= 6.0 LIMIT 10; // select show id
+#SELECT * FROM shows WHERE id = 62614; //select need row
+#SELECT * FROM shows shows WHERE id IN(SELECT show_id FROM ratings WHERE rating >= 6.0 LIMIT 10); // at fist select show_id from ratings table, after select show rows from shows table with selected before shows_id
+#SELECT * FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10); //join two tables into temporary wide table
+#SELECT title, rating FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10); // new table title:rating
+## one to many
+#SELECT * FROM genres LIMIT 10;
+#SELECT * FROM shows WHERE id = 63881;
+#SELECT show_id FROM genres WHERE ganre = 'Comedy' Limit 10;
+#SELECT title, rating FROM shows WHERE id IN (SELECT show_id FROM genres WHERE ganre = 'Comedy' Limit 10);
+#SELECT genre FROM genres WHERE show_id = 63881;
+#SELECT genre FROM geres WHERE show_id = (SELECT id FROM shows WHERE title = 'Catweasle');
+#SELECT * FROM shows JOIN genres ON shows.id = genres.show_id WHERE id = 63881;
+#SELECT * FROM shows WHERE title = 'The Office';
+#SELECT * FROM shows WHERE title = 'The Office' AND year = '2005';
+#SELECT person_id FROM stars WHERE show_id = (SELECT id FROM shows WHERE title = 'The office' AND year = '2005');
+#SELECT name FROM people WHERE id IN (SELECT person_id FROM stars WHERE show_id = (SELECT id FROM shows WHERE title = 'The Office' AND year = "2005"));
+#SELECT title FROM shows WHERE id IN (SELECT show_id FROM stars WHERE person_id = (SELECT id FROM people WHERE name = 'Steve Carrel'));
+#SELECT title FROM shows
+#   JOIN stars ON shows.id = stars.show_id
+#   JOIN people ON stars.person_id = people.id;
+#   WHERE name = 'Steve Carell';
+
+#SELECT title FROM shows,stars, people
+#   WHERE shows.id = stars.show_id
+#   AND people.id = stars person_id
+#   AND name = 'Steve Carell';
+
+#CREATE TABLE stars (
+#   show_id INTEGER NOT NULL
+#   person_id INTEGER NOT NULL     
+#   FOREIGN KEY(show_id) REFERENCES shows(id)
+#   FOREIGN KEY(person_id) REFERENCES people(id)
+# );
+
+#CREATE INDEX title_index ON shows (title);
+
+#CREATE INDEX person_index ON stars (person_id);
+#CREATE INDEX show_index ON stars (show_id);
+#CREATE INDEX name_index ON people (name);
+
+from cs50 import SQL
+
+db = SQL("sqlite:///favorites.db")
+
+favorite = input("Favorite: ")
+
+#Time 1:50
