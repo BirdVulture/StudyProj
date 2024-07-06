@@ -169,10 +169,24 @@ print(f"{favorite}: {counts[favorite]}")
 #CREATE INDEX show_index ON stars (show_id);
 #CREATE INDEX name_index ON people (name);
 
+#Time 1:50
+'''
 from cs50 import SQL
 
 db = SQL("sqlite:///favorites.db")
 
 favorite = input("Favorite: ")
+row = db.execute("SELECT COUNT(*) AS n FROM faforites WHERE problem = ?", favorite)
+row = [0]
 
-#Time 1:50
+print(row["n"])
+'''
+
+#BEGIN TRANSACTION
+#COMMIT
+#ROLLBACK
+
+#SQL injection attack
+
+
+
