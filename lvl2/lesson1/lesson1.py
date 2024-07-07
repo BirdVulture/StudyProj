@@ -31,7 +31,7 @@ class Game(arcade.Window):
         self.ball = Ball('/Users/olegz/Documents/GitHub/StudyProj/lvl2/lesson1/ball.png', 0.1)
         self.ball.center_x = 300
         self.ball.center_y = 300
-        self.ball.change_x = 100
+        self.ball.change_x = 50
         self.ball.change_y = 5
     def update(self, delta_time):
          self.ball.update()
