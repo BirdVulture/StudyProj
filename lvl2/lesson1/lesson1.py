@@ -9,11 +9,15 @@ class Ball(arcade.Sprite):
         def update(self):
             self.center_x += self.change_x
             #self.center_y += self.change_y
-            if self.right >= 600:
+            if self.center_x >= 600 or self.left <= 0:
                 self.change_x = -self.change_x
-            elif self.left <= 0:
-                self.change_x = -self.change_x
-
+            
+        
+            '''
+            if self.center_x == 600
+        
+        
+            '''
 
 
 
@@ -28,10 +32,10 @@ class Ball(arcade.Sprite):
 class Game(arcade.Window):
     def __init__ (self, width, height, title):
         super().__init__(width, height, title)
-        self.ball = Ball('/Users/olegz/Documents/GitHub/StudyProj/lvl2/lesson1/ball.png', 0.1)
+        self.ball = Ball('/Users/olegz/Documents/GitHub/StudyProj/lvl2/lesson1/ball.png', 0.5)
         self.ball.center_x = 300
         self.ball.center_y = 300
-        self.ball.change_x = 50
+        self.ball.change_x = 5
         self.ball.change_y = 5
     def update(self, delta_time):
          self.ball.update()
