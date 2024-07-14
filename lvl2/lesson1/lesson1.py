@@ -5,38 +5,34 @@
 #https://api.arcade.academy/en/latest/arcade.color.html
 import arcade 
 
+SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 600
+TITLE = "Пинг понг"
+CHANGE_X = 5
+CHANGE_Y = 5
+
 class Ball(arcade.Sprite):
         def update(self):
             self.center_x += self.change_x
-            #self.center_y += self.change_y
-            if self.center_x >= 600 or self.left <= 0:
+            self.center_y += self.change_y
+            if self.right >= SCREEN_WIDTH or self.left <= 0:
                 self.change_x = -self.change_x
+            if self.bottom <= 0 or self.top >= SCREEN_HEIGHT:
+                self.change_y = -self.change_y
             
-        
-            '''
-            if self.center_x == 600
-        
-        
-            '''
-
-
-
-            '''    
-            if self.bottom <= 0:
-                self.change_y = -self.change_y
-            elif self.top >= 600:
-                self.change_y = -self.change_y
-           '''
+           
             
 
 class Game(arcade.Window):
     def __init__ (self, width, height, title):
         super().__init__(width, height, title)
-        self.ball = Ball('/Users/olegz/Documents/GitHub/StudyProj/lvl2/lesson1/ball.png', 0.5)
-        self.ball.center_x = 300
-        self.ball.center_y = 300
-        self.ball.change_x = 5
-        self.ball.change_y = 5
+        self.ball = Ball('/Users/olegz/Documents/GitHub/StudyProj/lvl2/lesson1/ball.png', 0.1)
+        self.setup()
+    def setup(self):
+        self.ball.center_x = SCREEN_WIDTH / 2
+        self.ball.center_y = SCREEN_HEIGHT / 2
+        self.ball.change_x = CHANGE_X
+        self.ball.change_y = CHANGE_Y
     def update(self, delta_time):
          self.ball.update()
          
@@ -51,7 +47,7 @@ class Game(arcade.Window):
 
 
 
-window = Game(600, 600, "Ping Pong")
+window = Game(SCREEN_WIDTH, SCREEN_HEIGHT, TITLE)
 
 
 
