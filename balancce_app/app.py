@@ -2,13 +2,10 @@ from tkinter import *
 from tkinter import ttk
  
 window = Tk()
-
-window["bg"] = "white"
 window.title("My Balance")
 window.geometry("600x650")
 window.minsize(600,650)   # минимальные размеры
 window.maxsize(600,650)   # макисмальные размеры'''
-
 
 
 #Кнопки
