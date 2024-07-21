@@ -1,4 +1,5 @@
-Выбрать библиотеку для фронта Dear PyGui https://dearpygui.readthedocs.io/en/latest/ or https://ttkbootstrap.readthedocs.io/en/latest/
+Выбрать библиотеку для фронта Dear PyGui https://dearpygui.readthedocs.io/en/latest/ or https://ttkbootstrap.readthedocs.io/en/latest/ or https://flexx.readthedocs.io
+
 Создать каркас приложения
 Выбрать библиотеку для связи с бэкендом
 Создать таблицы
