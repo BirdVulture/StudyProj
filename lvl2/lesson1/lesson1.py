@@ -3,7 +3,10 @@
 #https://pypi.org
 #https://api.arcade.academy/en/latest/api/window.html#arcade.Window
 #https://api.arcade.academy/en/latest/arcade.color.html
-import arcade 
+#command= для привязки функции к кнопке
+import arcade
+import arcade.key
+import arcade.key 
 
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
@@ -41,7 +44,14 @@ class Game(arcade.Window):
         self.ball.change_x = CHANGE_X
         self.ball.change_y = CHANGE_Y
         self.bar.center_x = SCREEN_WIDTH / 2
-        
+    
+    def on_key_press(self, key, modifiers):
+        if key == arcade.key.LEFT:
+            self.bar.change_x = -CHANGE_X
+        if key == arcade.key.RIGHT:
+            self.bar.change_x = CHANGE_X
+
+            
     def update(self, delta_time):
         self.ball.update()
         self.bar.update()
