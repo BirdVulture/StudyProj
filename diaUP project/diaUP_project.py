@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import *
+
 
 HEIGHT = 2
 WIDTH = 30
@@ -10,10 +10,11 @@ CLR_WND = "#C0C0C0"
 CLR_SRCH = "white"
 
 window = tk.Tk()
+window["bg"] = CLR_WND
 window.geometry("600x600")
 window.title("diaUP")
 
-window["bg"] = CLR_WND
+
 
 one_btn = tk.Button(text= "Найти продукт", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
 two_btn = tk.Button(text= "Добавить свой продукт в список", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
@@ -33,14 +34,16 @@ five_btn.place (x = X, y = Y * 5)
 #поля ввода
 
 search = tk.Entry(width= WIDTH, bg = CLR_SRCH)
-search.place(x = 200, y = 50)
+search.place(x = 10, y = Y)
 
 #список продуктов
 
 food_list = ["пицца", "пельмени"]
-food_var = Variable(value=food_list)
-food_listbox = Listbox(listvariable=food_var, width= WIDTH)
-food_listbox.place(x = 10, y = 100)
+food_var = tk.Variable(value=food_list)
+food_listbox = tk.Listbox(listvariable=food_var, width= WIDTH)
+food_listbox.place(x = 10, y = Y * 2)
+
+
 #Лейблы
 
 #one_label = tk.Label(window, text= "DiaUp", bg = "white")
