@@ -1,8 +1,3 @@
-#я как пользователь хочу используя приложение посчитать количество хлебных единиц и поставить нужное количество инсульна
-#я как пользователь хочу найти в поиске нужный мне продукт для того, чтобы понять сколько в нем углеводов
-#нужно выбрать продукт в списке
-#нужно ввести его название в поле ""
-
 import tkinter as tk
 from tkinter import *
 
@@ -12,6 +7,7 @@ X = 350
 Y = 50
 CLR_BTN = "#DCDCDC"
 CLR_WND = "#C0C0C0"
+CLR_SRCH = "white"
 
 window = tk.Tk()
 window.geometry("600x600")
@@ -36,8 +32,8 @@ five_btn.place (x = X, y = Y * 5)
 
 #поля ввода
 
-search = tk.Entry(width= WIDTH)
-search.place(x = 10, y = 50)
+search = tk.Entry(width= WIDTH, bg = CLR_SRCH)
+search.place(x = 200, y = 50)
 
 #список продуктов
 
