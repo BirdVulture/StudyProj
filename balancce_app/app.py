@@ -17,8 +17,8 @@ btn_outcome = tk.Button(text="Расход") # создаем кнопку из 
 btn_outcome.place(x=120, y=120)    # размещаем кнопку в окне
 
 #поле ввода
-input_data = ttk.Entry(text="Приход", background = bg)
-input_data.place(x=20, y=20, width= 200)
+input_data = tk.Entry(text="Приход", background = bg)
+input_data.place(x=20, y=20, width= 20)
 
  
 window.mainloop()
