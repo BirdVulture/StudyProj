@@ -1,8 +1,8 @@
 import tkinter as tk
-
+from tkinter import *
 
 HEIGHT = 2
-WIDTH = 30
+WIDTH = 20
 X = 350
 Y = 50
 CLR_BTN = "#DCDCDC"
@@ -10,14 +10,13 @@ CLR_WND = "#C0C0C0"
 CLR_SRCH = "white"
 
 window = tk.Tk()
-window["bg"] = CLR_WND
 window.geometry("600x600")
 window.title("diaUP")
 
-
+window["bg"] = CLR_WND
 
 one_btn = tk.Button(text= "Найти продукт", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
-two_btn = tk.Button(text= "Добавить свой продукт в список", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
+two_btn = tk.Button(text= "Посмотреть продукт", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
 three_btn = tk.Button(text = "Приступить к расчету", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
 four_btn = tk.Button(text= "Поддержка", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
 five_btn = tk.Button(text= "Выход", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
@@ -34,15 +33,23 @@ five_btn.place (x = X, y = Y * 5)
 #поля ввода
 
 search = tk.Entry(width= WIDTH, bg = CLR_SRCH)
-search.place(x = 10, y = Y)
+search.place(x = 10, y = 50)
+
+#поле для ввода кол-ва граммов
+gramm = tk.Entry(width= WIDTH, bg = CLR_SRCH)
+gramm.place(x = 10, y = 420)
+
 
 #список продуктов
 
 food_list = ["пицца", "пельмени"]
-food_var = tk.Variable(value=food_list)
-food_listbox = tk.Listbox(listvariable=food_var, width= WIDTH)
-food_listbox.place(x = 10, y = Y * 2)
+food_var = Variable(value=food_list)
+food_listbox = Listbox(listvariable=food_var, width= WIDTH)
+food_listbox.place(x = 10, y = 100)
 
+#информация о продукте
+info_block = tk.Text(height= 7, width= 25)
+info_block.place(x = 10, y = 300)
 
 #Лейблы
 
