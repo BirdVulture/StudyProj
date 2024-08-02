@@ -16,7 +16,7 @@
     "action": null,
     "entityData": {
       "primitiveEntityName": "DIVISION",
-      "sourceCode": "AbcD1234-1",
+      "sourceCode": "AbcD1234-1_1234567890",
       "mdmCode": null,
       "destCode": null,
       "attributes": [
@@ -43,16 +43,7 @@
         {
             "name": "FirmID",
             "attributeType": "number",
-            "value": "??????"
-        }
-      ],
-      "linkAttributes": [
-        {
-          "name": "BUKRS",
-          "entityName": "T001",
-          "entitySourceCode": "AbcD1234-1",
-          "entityDestCode": null
-
+            "value": "1234567890"
         }
       ]
     }

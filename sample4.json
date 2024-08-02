@@ -16,7 +16,7 @@
     "action": null,
     "entityData": {
       "primitiveEntityName": "PlanSection",
-      "sourceCode": "AbcD1234-1",
+      "sourceCode": "AbcD1234-1_1234567890",
       "mdmCode": null,
       "destCode": null,
       "attributes": [
@@ -53,7 +53,7 @@
         {
             "name": "FirmID",
             "attributeType": "number",
-            "value": "??????"
+            "value": "1234567890"
         }
       ],
       "linkAttributes": [
