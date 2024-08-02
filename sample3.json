@@ -16,34 +16,39 @@
     "action": null,
     "entityData": {
       "primitiveEntityName": "DIVISION",
-      "sourceCode": "AbcD1234-1_1234567890",
+      "sourceCode": "11066_186654",
       "mdmCode": null,
       "destCode": null,
       "attributes": [
         {
           "name": "CodeKIS",
           "attributeType": "string",
-          "value": "AbcD1234-1"
+          "value": "7210"
         },
         {
           "name": "NAME",
           "attributeType": "string",
-          "value": "AbcD1234-1"
+          "value": "Бизнес-напраление по раб. с прочими НК"
         },
         {
           "name": "BeginDate",
           "attributeType": "Date",
-          "value": "07/26/2024, 10:14:27 AM"
+          "value": "20090701 00:00:00"
         },
         {
           "name": "EndDate",
           "attributeType": "Date",
-          "value": "07/26/2024, 10:14:27 AM"
+          "value": null
         },
         {
             "name": "FirmID",
             "attributeType": "number",
-            "value": "1234567890"
+            "value": "1186654"
+        },
+        {
+            "name": "idKIS",
+            "attributeType": "number",
+            "value": "11066"
         }
       ]
     }

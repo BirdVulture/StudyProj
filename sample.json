@@ -3,7 +3,7 @@
     "entityName": "MaterialGroup",
     "isMasterData": true,
     "sourceName": "KIS_CHTPZ",
-    "destName": "MDM",
+    "destName": "mdm",
     "userId": "NAVICONS\\mvilisov",
     "userName": null,
     "modelId": 1,
@@ -16,7 +16,7 @@
     "action": null,
     "entityData": {
       "primitiveEntityName": "MaterialGroup",
-      "sourceCode": "AbcD1234-1",
+      "sourceCode": "10016",
       "mdmCode": null,
       "destCode": null,
       "attributes": [
@@ -33,12 +33,12 @@
         {
           "name": "BeginDate",
           "attributeType": "Date",
-          "value": "07/26/2024, 10:14:27 AM"
+          "value": "20090701 00:00:00"
         },
         {
           "name": "EndDate",
           "attributeType": "Date",
-          "value": "07/26/2024, 10:14:27 AM"
+          "value": null
         }
       ]
     }

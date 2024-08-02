@@ -3,7 +3,7 @@
     "entityName": "PlanSection",
     "isMasterData": true,
     "sourceName": "KIS_CHTPZ",
-    "destName": "MDM",
+    "destName": "mdm",
     "userId": "NAVICONS\\mvilisov",
     "userName": null,
     "modelId": 1,
@@ -16,53 +16,49 @@
     "action": null,
     "entityData": {
       "primitiveEntityName": "PlanSection",
-      "sourceCode": "AbcD1234-1_1234567890",
+      "sourceCode": "3814-1_186654",
       "mdmCode": null,
       "destCode": null,
       "attributes": [
         {
           "name": "CodeKIS",
           "attributeType": "string",
-          "value": "AbcD1234-1"
+          "value": "81"
         },
         {
           "name": "NAME",
           "attributeType": "string",
-          "value": "AbcD1234-1"
+          "value": "Обыкновенные акции"
         },
         {
             "name": "SUBCOUNT",
             "attributeType": "string",
-            "value": "1234"
+            "value": "1"
         },
         {
             "name": "SIMBPORTION",
             "attributeType": "string",
-            "value": "F2"
+            "value": null
         },
         {
           "name": "BeginDate",
           "attributeType": "Date",
-          "value": "07/26/2024, 10:14:27 AM"
+          "value": "20090701 00:00:00"
         },
         {
           "name": "EndDate",
           "attributeType": "Date",
-          "value": "07/26/2024, 10:14:27 AM"
+          "value": null
         },
         {
             "name": "FirmID",
             "attributeType": "number",
-            "value": "1234567890"
-        }
-      ],
-      "linkAttributes": [
+            "value": "186654"
+        },
         {
-          "name": "BUKRS",
-          "entityName": "T001",
-          "entitySourceCode": "AbcD1234-1",
-          "entityDestCode": null
-
+            "name": "idKIS",
+            "attributeType": "number",
+            "value": "3814"
         }
       ]
     }
