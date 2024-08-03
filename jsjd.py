@@ -1,4 +1,4 @@
-n = int(input("введите количество роботов пылесосов: "))
-k = int(input("Введите количество электровеников: "))
-x = k + n
-print(f"{x} - всего гаджетов")
+x = int(input())
+hours = x % 60
+minutes = x // 60
+print(f"{hours} {minutes}")
