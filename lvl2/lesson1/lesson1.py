@@ -6,7 +6,7 @@
 #command= для привязки функции к кнопке
 import arcade
 import arcade.key
-import arcade.key 
+
 
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
@@ -25,6 +25,7 @@ class Ball(arcade.Sprite):
             
 class Bar(arcade.Sprite):
     def update(self):
+        #print("enter in update bar")
         self.center_x += self.change_x
         if self.right >= SCREEN_WIDTH:
             self.right = SCREEN_WIDTH
@@ -45,13 +46,26 @@ class Game(arcade.Window):
         self.ball.change_y = CHANGE_Y
         self.bar.center_x = SCREEN_WIDTH / 2
     
-    def on_key_press(self, key, modifiers):
-        if key == arcade.key.LEFT:
+    #def on_key_press(self, key, modifiers):
+    def on_key_press(self, symbol: int, modifiers: int):
+        if symbol == arcade.key.A:
             self.bar.change_x = -CHANGE_X
-        if key == arcade.key.RIGHT:
+        if symbol == arcade.key.D:
             self.bar.change_x = CHANGE_X
+        print(arcade.key.LEFT)   
+        
+        
+        #print("enter in pn key press")
+        #блок для стрелочек
+        '''
+        if symbol == arcade.key.LEFT:
+            self.bar.change_x = -CHANGE_X
+        if symbol == arcade.key.RIGHT:
+            self.bar.change_x = CHANGE_X
+        '''
+        
+         
 
-            
     def update(self, delta_time):
         self.ball.update()
         self.bar.update()

@@ -17,7 +17,7 @@ window["bg"] = CLR_WND
 
 one_btn = tk.Button(text= "Найти продукт", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
 two_btn = tk.Button(text= "Посмотреть продукт", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
-three_btn = tk.Button(text = "Приступить к расчету", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
+three_btn = tk.Button(text = "Рассчитать", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
 four_btn = tk.Button(text= "Поддержка", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
 five_btn = tk.Button(text= "Выход", height= HEIGHT, width= WIDTH, bg = CLR_BTN)
 
