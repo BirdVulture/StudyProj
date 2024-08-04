@@ -4,15 +4,17 @@
 #https://api.arcade.academy/en/latest/api/window.html#arcade.Window
 #https://api.arcade.academy/en/latest/arcade.color.html
 #command= для привязки функции к кнопке
+#https://www.youtube.com/watch?v=4GYCAl_wpx0
 import arcade
+import arcade.key
 import arcade.key
 
 
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
 TITLE = "Пинг понг"
-CHANGE_X = 5
-CHANGE_Y = 5
+CHANGE_X = 29
+CHANGE_Y = 29
 
 class Ball(arcade.Sprite):
     def update(self):
@@ -53,6 +55,16 @@ class Game(arcade.Window):
         if symbol == arcade.key.D:
             self.bar.change_x = CHANGE_X
         print(arcade.key.LEFT)   
+
+    def on_key_release(self, key, modifiers):
+        if key == arcade.key.A or key == arcade.key.D:
+            self.bar.change_x = 0
+
+    def check_for_collision():
+
+            
+        
+    
         
         
         #print("enter in pn key press")
