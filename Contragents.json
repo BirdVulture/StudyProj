@@ -1,0 +1,65 @@
+{
+    "messageId": "cca85627-a4bc-4a59-abd9-a4fa329e72fc",
+    "entityName": "PlanSection",
+    "isMasterData": true,
+    "sourceName": "KIS_CHTPZ",
+    "destName": "mdm",
+    "userId": "NAVICONS\\mvilisov",
+    "userName": null,
+    "modelId": 1,
+    "parameters": [
+      {
+        "name": null,
+        "value": null
+      }
+    ],
+    "action": null,
+    "entityData": {
+      "primitiveEntityName": "PlanSection",
+      "sourceCode": "3814-1_186654",
+      "mdmCode": null,
+      "destCode": null,
+      "attributes": [
+        {
+          "name": "CodeKIS",
+          "attributeType": "string",
+          "value": "81"
+        },
+        {
+          "name": "NAME",
+          "attributeType": "string",
+          "value": "Обыкновенные акции"
+        },
+        {
+            "name": "SUBCOUNT",
+            "attributeType": "string",
+            "value": "1"
+        },
+        {
+            "name": "SIMBPORTION",
+            "attributeType": "string",
+            "value": null
+        },
+        {
+          "name": "BeginDate",
+          "attributeType": "Date",
+          "value": "20090701 00:00:00"
+        },
+        {
+          "name": "EndDate",
+          "attributeType": "Date",
+          "value": null
+        },
+        {
+            "name": "FirmID",
+            "attributeType": "number",
+            "value": "186654"
+        },
+        {
+            "name": "idKIS",
+            "attributeType": "number",
+            "value": "3814"
+        }
+      ]
+    }
+  }
