@@ -7,14 +7,13 @@
 #https://www.youtube.com/watch?v=4GYCAl_wpx0
 import arcade
 import arcade.key
-import arcade.key
 
 
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
 TITLE = "Пинг понг"
-CHANGE_X = 4
-CHANGE_Y = 4
+CHANGE_X = 9
+CHANGE_Y = 9
 
 class Ball(arcade.Sprite):
     def update(self):
@@ -114,7 +113,13 @@ arcade.run()
 
 
 
+'''
+дз
+написать консольное приложение в диапозоне от 0 до 100, чтобы оно ходило с определенным шагом бесконечно в диапозоне от 0 до 100
 
+'''
+
+#ошибка в том, что ( change_x = -4 )
 
 
 
