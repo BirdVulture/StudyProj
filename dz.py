@@ -1,10 +1,10 @@
 flag = "y"
 
 coord = 0
-change = 33
+change = 10
 
 while flag == "y":
-    if coord < 100 and coord > 0:
+    if coord <= 100 and coord >= 0:
         coord = coord + change
         print(coord)
         flag = str(input("продолжать? y/n "))
