@@ -16,7 +16,7 @@ def moving(coord, change_x):
 i = 1
 while i <= 10:
     print("hello")
-    i = 10
+    i = i + 1
 
 '''for i in range(49, 100):
     print(i)'''
@@ -31,6 +31,6 @@ number = 1
  
 while number != 5:
     print(f"number = {number}")
-    number += 1
+    number += 2
 print("Работа программы завершена")
 
