@@ -7,14 +7,13 @@
 #https://www.youtube.com/watch?v=4GYCAl_wpx0
 import arcade
 import arcade.key
-import arcade.key
 
 
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
 TITLE = "Пинг понг"
-CHANGE_X = 29
-CHANGE_Y = 29
+CHANGE_X = 9
+CHANGE_Y = 9
 
 class Ball(arcade.Sprite):
     def update(self):
@@ -24,6 +23,7 @@ class Ball(arcade.Sprite):
             self.change_x = -self.change_x
         if self.bottom <= 0 or self.top >= SCREEN_HEIGHT:
             self.change_y = -self.change_y
+            
             
 class Bar(arcade.Sprite):
     def update(self):
@@ -60,15 +60,12 @@ class Game(arcade.Window):
         if key == arcade.key.A or key == arcade.key.D:
             self.bar.change_x = 0
 
-    def check_for_collision():
 
-            
-        
-    
-        
-        
+
         #print("enter in pn key press")
         #блок для стрелочек
+
+
         '''
         if symbol == arcade.key.LEFT:
             self.bar.change_x = -CHANGE_X
@@ -81,6 +78,10 @@ class Game(arcade.Window):
     def update(self, delta_time):
         self.ball.update()
         self.bar.update()
+        if arcade.check_for_collision(self.ball, self.bar) == True:
+            self.ball.change_y = CHANGE_Y
+            
+
         
     def on_draw(self):
         #self.background_color = (255, 0, 0)
@@ -112,7 +113,16 @@ arcade.run()
 
 
 
+'''
+дз
+написать консольное приложение в диапозоне от 0 до 100, чтобы оно ходило с определенным шагом бесконечно в диапозоне от 0 до 100
 
+'''
+
+
+
+
+#ошибка в том, что ( change_x = -4 )
 
 
 

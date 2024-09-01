@@ -8,6 +8,7 @@ window.geometry("600x650")
 window.minsize(600,650)   # минимальные размеры
 window.maxsize(600,650)   # макисмальные размеры'''
 bg = "#C0C0C0"
+#
 
 #Кнопки
 btn_income = tk.Button(text="Приход") # создаем кнопку из пакета tkinter
