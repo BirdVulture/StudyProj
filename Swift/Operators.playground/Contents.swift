@@ -26,7 +26,7 @@ type(of: unaryPostFix)
 
 /// 3. binary infix - between two values  myAge +(binary infix) 30
 
-let result = 1 + 2
+let result = 1 + 4
 
 
 let names = "foo" + " " + "Bar"

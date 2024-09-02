@@ -12,8 +12,8 @@ import arcade.key
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
 TITLE = "Пинг понг"
-CHANGE_X = 9
-CHANGE_Y = 9
+CHANGE_X = 5
+CHANGE_Y = 5
 
 class Ball(arcade.Sprite):
     def update(self):
@@ -47,6 +47,7 @@ class Game(arcade.Window):
         self.ball.change_x = CHANGE_X
         self.ball.change_y = CHANGE_Y
         self.bar.center_x = SCREEN_WIDTH / 2
+        self.bar.center_y = 600
     
     #def on_key_press(self, key, modifiers):
     def on_key_press(self, symbol: int, modifiers: int):
@@ -80,6 +81,7 @@ class Game(arcade.Window):
         self.bar.update()
         if arcade.check_for_collision(self.ball, self.bar) == True:
             self.ball.change_y = CHANGE_Y
+
             
 
         
