@@ -38,8 +38,8 @@ class Bar(arcade.Sprite):
 class Game(arcade.Window):
     def __init__ (self, width, height, title):
         super().__init__(width, height, title)
-        self.ball = Ball('/Users/olegz/Documents/GitHub/StudyProj/lvl2/lesson1/ball.png', 0.1)
-        self.bar = Bar('/Users/olegz/Documents/GitHub/StudyProj/lvl2/lesson1/bar.png', 0.1)
+        self.ball = Ball('/Users/olegz/Documents/StudyProj/lvl2/lesson1/ball.png', 0.1)
+        self.bar = Bar('/Users/olegz/Documents/StudyProj/lvl2/lesson1/bar.png', 0.1)
         self.setup()
     def setup(self):
         self.ball.center_x = SCREEN_WIDTH / 2
@@ -47,7 +47,7 @@ class Game(arcade.Window):
         self.ball.change_x = CHANGE_X
         self.ball.change_y = CHANGE_Y
         self.bar.center_x = SCREEN_WIDTH / 2
-        self.bar.center_y = 600
+        self.bar.center_y = 300
     
     #def on_key_press(self, key, modifiers):
     def on_key_press(self, symbol: int, modifiers: int):
@@ -80,7 +80,7 @@ class Game(arcade.Window):
         self.ball.update()
         self.bar.update()
         if arcade.check_for_collision(self.ball, self.bar) == True:
-            self.ball.change_y = CHANGE_Y
+            self.ball.change_y = self.ball.change_y * (-1)
 
             
 
