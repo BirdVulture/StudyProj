@@ -41,13 +41,16 @@ class Game(arcade.Window):
         self.ball = Ball('/Users/olegz/Documents/StudyProj/lvl2/lesson1/ball.png', 0.1)
         self.bar = Bar('/Users/olegz/Documents/StudyProj/lvl2/lesson1/bar.png', 0.1)
         self.setup()
+        self.score = 0
     def setup(self):
         self.ball.center_x = SCREEN_WIDTH / 2
         self.ball.center_y = SCREEN_HEIGHT / 2
         self.ball.change_x = CHANGE_X
         self.ball.change_y = CHANGE_Y
         self.bar.center_x = SCREEN_WIDTH / 2
-        self.bar.center_y = 300
+        self.bar.center_y = 0
+
+
     
     #def on_key_press(self, key, modifiers):
     def on_key_press(self, symbol: int, modifiers: int):
@@ -80,7 +83,9 @@ class Game(arcade.Window):
         self.ball.update()
         self.bar.update()
         if arcade.check_for_collision(self.ball, self.bar) == True:
+            self.ball.bottom = self.bar.top
             self.ball.change_y = self.ball.change_y * (-1)
+            self.score = self.score + 1
 
             
 
@@ -90,6 +95,8 @@ class Game(arcade.Window):
         self.clear((255, 255, 255))
         self.ball.draw()
         self.bar.draw()
+        arcade.draw_text(f"Счет: {self.score}", 20, SCREEN_WIDTH - 30, (0, 0, 0), 20)
+        
 
 
 
