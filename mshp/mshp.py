@@ -1,12 +1,12 @@
 #урок1
 
-k = int(input())
-n = int(input())
-summa = k
-salary = k
-for i in range(n - 1):
-    salary = salary + 100
-    summa = summa + salary
-print(summa)
-
-    
+a = []
+ok = 0
+fail = 0
+while a != 0:
+    a = int(input())
+    if a <= 180 and a > 0:
+        ok = ok + 1
+    if a > 180:
+        fail = fail + a
+print(f"Было поднято {ok} ящиков, но еще {fail} кг груза ожидают внизу." )
