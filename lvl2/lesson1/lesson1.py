@@ -15,6 +15,7 @@ TITLE = "Пинг понг"
 CHANGE_X = 5
 CHANGE_Y = 5
 
+
 class Ball(arcade.Sprite):
     def update(self):
         self.center_x += self.change_x
@@ -33,7 +34,7 @@ class Bar(arcade.Sprite):
             self.right = SCREEN_WIDTH
         if self.left <= 0:
             self.left = 0
-            
+         
 
 class Game(arcade.Window):
     def __init__ (self, width, height, title):
@@ -42,6 +43,7 @@ class Game(arcade.Window):
         self.bar = Bar('/Users/olegz/Documents/StudyProj/lvl2/lesson1/bar.png', 0.1)
         self.setup()
         self.score = 0
+        self.attempts = 3
     def setup(self):
         self.ball.center_x = SCREEN_WIDTH / 2
         self.ball.center_y = SCREEN_HEIGHT / 2
@@ -49,7 +51,7 @@ class Game(arcade.Window):
         self.ball.change_y = CHANGE_Y
         self.bar.center_x = SCREEN_WIDTH / 2
         self.bar.center_y = 0
-
+    
 
     
     #def on_key_press(self, key, modifiers):
@@ -86,17 +88,16 @@ class Game(arcade.Window):
             self.ball.bottom = self.bar.top
             self.ball.change_y = self.ball.change_y * (-1)
             self.score = self.score + 1
+            '''
+            if self.ball.bottom <= 0:
+                self.attempts = self.attempts - 1
+            if self.attempts == 0:
+                self.ball.stop()
+                self.bar.stop()
+            '''
 
             
 
-        
-    def on_draw(self):
-        #self.background_color = (255, 0, 0)
-        self.clear((255, 255, 255))
-        self.ball.draw()
-        self.bar.draw()
-        arcade.draw_text(f"Счет: {self.score}", 20, SCREEN_WIDTH - 30, (0, 0, 0), 20)
-        
 
 
 
