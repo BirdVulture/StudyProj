@@ -114,4 +114,39 @@ print(cities.sorted())
 
 print(cities.reversed())
 
-///
+/// DICTIONARIES
+
+var employee = [
+    "name" : "Taylor Swift",
+    "job" : "Singer",
+    "location" : "Nashville"
+]
+
+print(employee["name", default: "Unknown"])
+print(employee["job", default: "Unknown"])
+print(employee["home", default: "Unknown"])
+
+let hasGraduated = [
+    "Eric": false,
+    "Maeve": false,
+    "Otis": false
+]
+
+let olympics = [
+    2012: "London",
+    2016: "Rio",
+    2021: "Tokyo"
+]
+
+print(olympics[2012, default: "Unknown"])
+
+var heights = [String: Int]()
+heights["Yao"] = 229
+heights["shaquille"] = 216
+heights["James"] = 206
+print(heights)
+
+
+
+///SETS
+
