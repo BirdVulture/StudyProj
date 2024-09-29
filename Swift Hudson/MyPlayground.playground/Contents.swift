@@ -73,22 +73,45 @@ let goodDogs = true
 let firstPart = "Hello, "
 let secondPart = "world!"
 let greeting = firstPart + secondPart
+let luggageCode = "1" + "2" + "3"
 
+let firstName = "Taylor"
+let age = 26
 
+let message = "Hello, my name is \(firstName) and I'm \(age)"
+print(message)
 
+print("5 x 5 is \(5 * 5)")
 
+/// ARRAYS
 
+var beatles = ["John", "Paul", "George", "Ringo"] // Array of strings
 
+var numbers = [4, 8, 15] //Array of integers
 
+var temperatures = [25.3, 28.2, 26.4]
 
+print(temperatures[0])
 
+numbers.append(9)
 
+var scores = Array<Int>()  // Array must hold integers
+scores.append(100)
 
+var albums = [String]()
+albums.append("Folklore")
+albums.append("red")
+print(albums.count)
 
+beatles.remove(at: 3)
+var count = beatles.count
 
+let bondMovies = ["Casino Royale", "Spectre", "No Yime to Die"]
+print(bondMovies.contains("Frozen")) // Check array  for Frozen
 
+let cities = ["London", "Tokyo", "Rome"]
+print(cities.sorted())
 
+print(cities.reversed())
 
-
-
-
+///
