@@ -1,12 +1,14 @@
 #урок1
 
-a = []
-ok = 0
-fail = 0
-while a != 0:
-    a = int(input())
-    if a <= 180 and a > 0:
-        ok = ok + 1
-    if a > 180:
-        fail = fail + a
-print(f"Было поднято {ok} ящиков, но еще {fail} кг груза ожидают внизу." )
+
+
+list = []
+for i in range(5):
+    a = float(input())
+    b = round(a)
+    if (a - b) >= 0.5:
+        b = b + 1
+    list.append(b)
+print(list)
+for i in range(len(list)):
+    print(list[i])
