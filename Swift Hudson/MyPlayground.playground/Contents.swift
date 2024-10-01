@@ -1,3 +1,4 @@
+
 import Cocoa
 
 ///VARIABLES AND CONSTANTS
