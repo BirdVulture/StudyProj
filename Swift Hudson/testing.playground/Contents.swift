@@ -1,9 +1,9 @@
 import Cocoa
 
-let tempCelsius = 9.0
-let tempFahrenheit = (tempCelsius * 9) / 5 + 32
+var albums: [String] = ["Red", "Fearless", "Red"]
 
-print("Celsius is \(tempCelsius)° and Fahrengeit is \(tempFahrenheit)°")
+var uniqAlboms = Set(albums)
 
+print(uniqAlboms.count)
 
 
