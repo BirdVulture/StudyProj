@@ -149,5 +149,29 @@ print(heights)
 
 
 
-///SETS
+///SETS 1. no duplicates 2. Fast lookup items
+let actors = Set(["Tom Cruze", "Nicolas" ])
+
+var actorsNew = Set<String>()
+actorsNew.insert("Tom Cruze")
+print(actorsNew)
+
+///ENUMS
+enum Weekday {
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+}
+
+enum WeekdayTwo {
+    case monday, tuesday, wednesday
+}
+
+var day = Weekday.friday
+day = .friday
+
+
+
 
