@@ -363,7 +363,109 @@ let background = theme == .dark ? "black" : "white"
 print(background)
 
 
-/// LOOP
+
+/// LOOP FOR
+
+let platforms = ["ios", "macos", "tvos"]
+
+for os in platforms {
+    print ("swift works great on \(os).")
+}
+
+for i in 1...3 {
+    print("5 x \(i) is \(5 * i)")
+}
+
+/// loop in loop
+for i in 1...3 {
+    print("The \(i) times table")
+    
+    for j in 1...3 {
+        print("  \(j) x \(i) is \(j * i)")
+    }
+    
+    print()
+}
+
+
+for i in 1..<5 {
+    print("Counting up: \(i)")
+}
+
+/// counter
+var counterNew = 0
+
+for _ in 1...5 {
+    counterNew = counterNew + 1
+}
+
+print(counterNew)
+
+
+
+/// LOOP WHILE
+
+var countdown = 5
+
+while countdown > 0 {
+    print("\(countdown)...")
+    countdown = countdown - 1
+}
+
+var roll = 0
+
+while roll != 5 {
+    roll = Int.random(in: 1...5)
+    print("\(roll)")
+}
+
+print("end")
+
+/// break and continue loop
+
+let filenames = ["me.jpg", "work.txt", "sophie.jpg"]
+
+for filename in filenames {
+    if filename.hasSuffix(".jpg") == false {
+        continue
+    }
+    print("found picture: \(filename)")
+}
+
+let number1 = 4
+let number2 = 14
+
+var multiplies = [Int]()
+
+for i in 1...1000 {
+    if i.isMultiple(of: number1) && i.isMultiple(of: number2) {
+        multiplies.append(i)
+        
+        if multiplies.count == 5 {
+            break
+        }
+    }
+}
+
+print(multiplies)
+
+
+
+///FUNCTIONS
+
+func showWelcome() {
+    print("Hello World")
+}
+
+showWelcome()
+
+func printTimeTables(number: Int, end: Int) {
+    for i in 1...end {
+        print("\(i) * \(number) is \(i * number)")
+    }
+}
+
+printTimeTables(number: 5, end: 3)
 
 
 
