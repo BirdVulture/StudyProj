@@ -312,6 +312,59 @@ if transport == .airplane || transport == .helicopter{
 }
 
 
+// Switch
+enum Weather {
+    case sun, rain, wind, unknown
+}
+
+let forecastOne = Weather.sun
+
+switch forecastOne {
+case .sun:
+    print("Nice day")
+case .rain:
+    print("Rainy day")
+case .wind:
+    print("Windy day")
+case .unknown:
+    print("No data")
+}
+
+
+let place = "Metropolis"
+
+switch place {
+case "Gotham":
+    print("You are Batman!")
+case "Wakanda":
+    print("Black Panther!")
+default:
+    print("Who are you?")
+}
+
+//ternary conditional operator for quick tests
+
+let myage = 12
+
+let canVote = age >= 18 ? "Yes" : "No"
+
+let names = ["Jay", "Kay", "Mal"]
+let crewCount = names.isEmpty ? "No one" : "\(names.count) people"
+print(crewCount)
+
+enum Theme {
+    case light, dark
+}
+
+let theme = Theme.dark
+
+let background = theme == .dark ? "black" : "white"
+
+print(background)
+
+
+/// LOOP
+
 
 
 
