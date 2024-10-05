@@ -179,7 +179,11 @@ var actorsNew = Set<String>()
 actorsNew.insert("Tom Cruze")
 print(actorsNew)
 
+
+
 ///ENUMS
+
+
 enum Weekday {
     case monday
     case tuesday
@@ -533,4 +537,4 @@ enum PasswordErrors: Error {
     case short, obvious
 }
 
-
+a
