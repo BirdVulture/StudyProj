@@ -5,6 +5,7 @@
 #https://api.arcade.academy/en/latest/arcade.color.html
 #command= для привязки функции к кнопке
 #https://www.youtube.com/watch?v=4GYCAl_wpx0
+#https://tproger.ru/news/--entuziast-sozdal-igru-na-chistom-assemblere-bez-ispolzovaniya-bibliotek
 import arcade
 import arcade.key
 
@@ -12,8 +13,8 @@ import arcade.key
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
 TITLE = "Пинг понг"
-CHANGE_X = 5
-CHANGE_Y = 5
+CHANGE_X = 10
+CHANGE_Y = 10
 
 
 class Ball(arcade.Sprite):
@@ -52,8 +53,16 @@ class Game(arcade.Window):
         self.bar.center_x = SCREEN_WIDTH / 2
         self.bar.center_y = 0
     
+    def on_draw(self):
+        self.clear((255, 255, 255))
+        self.ball.draw()
+        self.bar.draw()
+        arcade.draw_text(f"Счет: {self.score}", 20, SCREEN_HEIGHT - 30, (0,0,0), 20)
+        arcade.draw_text(f"Попытки: {self.attempts}", 20, SCREEN_HEIGHT - 70, (0,0,0), 20)
+        if self.attempts == 0:
+            arcade.draw_text("GAME OVER", SCREEN_HEIGHT / 6, SCREEN_WIDTH / 2, (255, 33, 33), 50)
 
-    
+
     #def on_key_press(self, key, modifiers):
     def on_key_press(self, symbol: int, modifiers: int):
         if symbol == arcade.key.A:
@@ -88,15 +97,16 @@ class Game(arcade.Window):
             self.ball.bottom = self.bar.top
             self.ball.change_y = self.ball.change_y * (-1)
             self.score = self.score + 1
-            '''
-            if self.ball.bottom <= 0:
-                self.attempts = self.attempts - 1
-            if self.attempts == 0:
-                self.ball.stop()
-                self.bar.stop()
-            '''
+        if self.ball.bottom <= 0:
+            self.setup()
+            self.attempts = self.attempts - 1
+            print("work")
+        if self.attempts == 0:
+            self.ball.stop()
+            self.bar.stop()  
+                      
 
-            
+    
 
 
 
