@@ -467,7 +467,70 @@ func printTimeTables(number: Int, end: Int) {
 
 printTimeTables(number: 5, end: 3)
 
+func rollDice() -> Int {     /// -> is return string
+    return Int.random(in: 1...6)
+}
+
+let result = rollDice()
+print(result)
 
 
+
+func areLettersIdentical(string1: String, string2: String) -> Bool {
+    let first = string1.sorted()
+    let second = string2.sorted()
+    return first == second
+}
+
+func pyth(a: Double, b: Double) -> Double {
+    let input = a * a + b * b
+    let root = sqrt(input)
+    return root
+}
+
+let cc = pyth(a: 3, b: 4)
+print(cc)
+
+
+///return multiple values
+
+func getUser() -> [String] { // return array
+    ["Tylor", "Swift"]
+}
+
+let user = getUser()
+print("Name: \(user[0]) \(user[1])")
+
+func getUser2() -> [String: String] { // return dictionary
+    ["firstname": "Tylor", "lastname": "Swift"]
+}
+
+let user2 = getUser2()
+print("Name: \(user2["firstname", default: "?"]) \(user2["lastname", default: "?" ])")
+
+func getUser3() -> (firstname: String, lastname: String) { //return tuple
+    (firstname: "Tylor", lastname: "Swift")
+}
+let user3 = getUser3()
+print("Name: \(user3.firstname) \(user3.lastname)")
+
+
+func printTimeTables2(for number: Int) {  // for - external parameter name, number - internal parameter name
+    for i in 1...number {
+        print("\(i) x \(number) is \(i * number)")
+    }
+}
+
+printTimeTables2(for: 5)
+
+var characters = ["Lana", "Pam", "Ray", "Sterling"]
+print(characters.count)
+characters.removeAll(keepingCapacity: true)
+
+/// handle errors in fuctions
+
+enum PasswordErrors: Error {
+    case short, obvious
+}
 
 
