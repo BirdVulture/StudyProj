@@ -1,11 +1,12 @@
 import Cocoa
 
-func exemple(first number: Int) -> Bool {
-    if number == 1 {
-        return true
-    }
-    return false
+func day(x: Double) -> Int {
+    var num = x / 1_000_000
+    
+    return Int(num)
 }
 
-var x = exemple(first: 1)
+var v = day(x: 14052020)
+
+
 
