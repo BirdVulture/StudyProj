@@ -1,15 +1,10 @@
 #урок1
 
-def num_digits(n):
-    num = 0
-    while n != 0:
-        num = num + (n % 10)
-        n //= 10
+def five():
+        print("_####_")
+        print("_#____")
+        print("_####_")
+        print("____#_")
+        print("_####_")
         
-
-    return num
-    
-    
-a = int(input())
-b = num_digits(a)
-print(b)
+    five()
