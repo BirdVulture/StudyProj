@@ -8,3 +8,4 @@ func exemple(first number: Int) -> Bool {
 }
 
 var x = exemple(first: 1)
+

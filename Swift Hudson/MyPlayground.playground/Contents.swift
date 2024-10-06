@@ -537,4 +537,14 @@ enum PasswordErrors: Error {
     case short, obvious
 }
 
-a
+func checkPassword(_ password: String) throws -> String {
+    if password.count < 5 { throw PasswordErrors.short}
+    if password == "12345" { throw PasswordErrors.obvious}
+    if password.count < 8 {
+        return "OK"
+    } else if password.count < 10 {
+        return "Good"
+    } else {
+        return "Excellent"
+    }
+}
