@@ -548,3 +548,19 @@ func checkPassword(_ password: String) throws -> String {
         return "Excellent"
     }
 }
+
+let string = "12345"
+
+do {
+    let result = try checkPassword(string)
+    print("Password rating \(result)")
+} catch PasswordErrors.short {
+    print("Please use a longer password.")
+} catch PasswordErrors.obvious {
+    print("I have  the same combination on my luggage!")
+} catch {
+    print("There was an error: \(error.localizedDescription)")
+}
+
+/// 
+
