@@ -537,4 +537,33 @@ enum PasswordErrors: Error {
     case short, obvious
 }
 
+<<<<<<< HEAD
+=======
+func checkPassword(_ password: String) throws -> String {
+    if password.count < 5 { throw PasswordErrors.short}
+    if password == "12345" { throw PasswordErrors.obvious}
+    if password.count < 8 {
+        return "OK"
+    } else if password.count < 10 {
+        return "Good"
+    } else {
+        return "Excellent"
+    }
+}
+
+let string = "12345"
+
+do {
+    let result = try checkPassword(string)
+    print("Password rating \(result)")
+} catch PasswordErrors.short {
+    print("Please use a longer password.")
+} catch PasswordErrors.obvious {
+    print("I have  the same combination on my luggage!")
+} catch {
+    print("There was an error: \(error.localizedDescription)")
+}
+
+/// 
+>>>>>>> a551e4c117b346ab13b50204b6be35de2b97100b
 
