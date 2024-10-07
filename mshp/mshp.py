@@ -1,10 +1,15 @@
 #урок1
 
-def five():
-        print("_####_")
-        print("_#____")
-        print("_####_")
-        print("____#_")
-        print("_####_")
-        
-    five()
+def months(x, favorite_month):
+    num = x // 10000 % 100
+    answer = ""
+    if num == favorite_month:
+        answer = "Да"
+    else:
+        answer = "Нет"
+    return answer
+    
+favorite_month = int(input())
+data = int(input())
+answer = months(data, favorite_month)
+print(answer)
