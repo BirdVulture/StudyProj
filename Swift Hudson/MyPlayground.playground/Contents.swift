@@ -571,7 +571,7 @@ func greetings() {
 
 greetings()
 
-var greetCopy: () -> Void = greetings
+var greetCopy: () -> Void = greetings   /// Copy of the function, Void mean nothing
 
 greetCopy()
 
