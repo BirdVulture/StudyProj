@@ -608,7 +608,38 @@ func captainFirstSorted(name1: String, name2: String) -> Bool {
 
 let captainFirstTeam = team.sorted(by: captainFirstSorted)
 
+
 /// trailng closures
+let reverseTeam = team.sorted{ $0 > $1 }
+
+var charactersOnly = ["Liem", "Lana", "Pam", "Ray", "Sterling"]
+
+let pOnly = charactersOnly.filter { $0.hasPrefix("L")} /// Filter
+
+let charactersOnlyUppercase = charactersOnly.map { $0.uppercased() }
+
+func makeArray(size: Int, using generator: () -> Int)  -> [Int]  {
+    var numbers = [Int]()
+    
+    for _ in 0..<size {
+        let newNumber = generator()
+        numbers.append(newNumber)
+    }
+    return numbers
+}
+
+func generateNumber() -> Int {
+    Int.random(in: 1...20)
+}
+
+let newRools = makeArray(size: 10, using: generateNumber)
+print(newRools)
+
+
+
+///OWN STRUCTS
+
+struct 
 
 
 
