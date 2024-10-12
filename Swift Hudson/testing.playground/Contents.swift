@@ -1,12 +1,19 @@
 import Cocoa
 
-func day(x: Double) -> Int {
-    var num = x / 1_000_000
-    
-    return Int(num)
+var ex = { (num: Int) -> Int in
+    num * 2
+    }
+
+print(ex(2))
+
+
+func exemple(nums: Int) -> Int{
+    var dat = nums * 2
+    return dat
 }
 
-var v = day(x: 14052020)
+var data2: (Int) -> Int = exemple
 
+var numb = data2(12)
 
 

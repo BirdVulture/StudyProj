@@ -537,8 +537,7 @@ enum PasswordErrors: Error {
     case short, obvious
 }
 
-<<<<<<< HEAD
-=======
+
 func checkPassword(_ password: String) throws -> String {
     if password.count < 5 { throw PasswordErrors.short}
     if password == "12345" { throw PasswordErrors.obvious}
@@ -564,6 +563,83 @@ do {
     print("There was an error: \(error.localizedDescription)")
 }
 
-/// 
->>>>>>> a551e4c117b346ab13b50204b6be35de2b97100b
+///Closeres
+
+func greetings() {
+    print("Hi there!")
+}
+
+greetings()
+
+var greetCopy: () -> Void = greetings   /// Copy of the function, Void mean nothing
+
+greetCopy()
+
+let sayHi = { (name: String) -> String in
+    "Hi there \(name)"
+}
+
+sayHi( "Jay")
+
+func getUserData(for id: Int) -> String {
+    if id == 1989 {
+        return "Talor Swift"
+    } else {
+        return "Anonymous"
+    }
+}
+
+let data: (Int) -> String = getUserData
+let user10 = data(1989)
+print(user10)
+
+
+let team = ["1", "5", "2", "3", "4"]
+let sortedTeam = team.sorted()
+
+func captainFirstSorted(name1: String, name2: String) -> Bool {
+    if name1 == "5" {
+        return true
+    } else if name2 == "5" {
+        return false
+    }
+    return name1 < name2
+}
+
+let captainFirstTeam = team.sorted(by: captainFirstSorted)
+
+
+/// trailng closures
+let reverseTeam = team.sorted{ $0 > $1 }
+
+var charactersOnly = ["Liem", "Lana", "Pam", "Ray", "Sterling"]
+
+let pOnly = charactersOnly.filter { $0.hasPrefix("L")} /// Filter
+
+let charactersOnlyUppercase = charactersOnly.map { $0.uppercased() }
+
+func makeArray(size: Int, using generator: () -> Int)  -> [Int]  {
+    var numbers = [Int]()
+    
+    for _ in 0..<size {
+        let newNumber = generator()
+        numbers.append(newNumber)
+    }
+    return numbers
+}
+
+func generateNumber() -> Int {
+    Int.random(in: 1...20)
+}
+
+let newRools = makeArray(size: 10, using: generateNumber)
+print(newRools)
+
+
+
+///OWN STRUCTS
+
+struct 
+
+
 
