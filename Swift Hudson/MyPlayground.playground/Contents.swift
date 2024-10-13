@@ -735,6 +735,65 @@ app.contacts.append("Adrian")
 app.contacts.append("Allen")
 app.contacts.append("Ish")
 
+/// Custom initializers
+struct Player {
+    let name: String
+    let number: Int
+
+    init(name: String, number: Int) {
+        self.name = name
+        self.number = number
+    }
+
+}
+
+let player = Player(name: "Megan", number: 15)
+
+print(player.number)
+
+/// Limit access to internal data
+
+struct BankAccount {
+    private(set) var funds = 0  //access control
+    
+    mutating func deposit(amount: Int) {
+        funds += amount
+    }
+    
+    mutating func withdraw(amount: Int) -> Bool {
+        if funds > amount {
+            funds -= amount
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+var account = BankAccount()
+account.deposit(amount: 100)
+
+let success = account.withdraw(amount: 200)
+
+
+if success {
+    print("Withdrew money successfully")
+} else {
+    print("Failed to get the money")
+    
+}
+
+///account.funds += 10000
+
+print(account.funds)
+
+
+
+
+
+
+
+
 
 
 
