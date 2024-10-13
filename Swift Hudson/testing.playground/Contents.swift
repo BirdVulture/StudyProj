@@ -17,3 +17,4 @@ var data2: (Int) -> Int = exemple
 var numb = data2(12)
 
 
+
