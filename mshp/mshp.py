@@ -1,15 +1,14 @@
 #урок1
 
-def months(x, favorite_month):
-    num = x // 10000 % 100
-    answer = ""
-    if num == favorite_month:
-        answer = "Да"
-    else:
-        answer = "Нет"
-    return answer
+def deposit(x, a, n):
+    summ = x
+    for i in range(n):
+        summ = summ + (summ * a / 100)
     
-favorite_month = int(input())
-data = int(input())
-answer = months(data, favorite_month)
-print(answer)
+    return summ
+
+
+
+x, a, n = list(map(int, input().split()))
+print("{:.4f}".format(deposit(x, a, n)))
+            
