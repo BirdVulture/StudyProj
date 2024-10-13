@@ -639,7 +639,113 @@ print(newRools)
 
 ///OWN STRUCTS
 
-struct 
+struct Album {
+    let title: String
+    let artist: String
+    let year: Int
+    
+    func printSummary() {
+        print("\(title) (\(year)) by \(artist)")
+    }
+}
+
+let red = Album(title: "Red", artist: "Taylor Swift", year: 2012)
+
+let wings = Album(title: "Wings", artist: "BTS", year: 2016)
+
+print(red.title)
+print(wings.artist)
+
+red.printSummary()
+wings.printSummary()
+
+struct Employee {
+    let name: String
+    var vacationAllocated: Int
+    var vacationTaken = 0
+    var vacationRemaining: Int { ///dynamicaly calculated
+        get {                     /// getter
+            vacationAllocated - vacationTaken
+        }                         /// setter
+        set {vacationAllocated = vacationTaken + newValue
+        }
+        
+    }
+    
+    mutating func takeVacation(days: Int) { ///Mutating function
+        if vacationRemaining > days {
+            ///vacationRemaining -= days
+            print("I am going on vacation!")
+            print("Days remaining: \(vacationRemaining)")
+            
+            
+        } else {
+            print("Oops! There aren't enough days remaining")
+        }
+    }
+}
+
+var archer = Employee.init(name: "Archer", vacationAllocated: 14) /// initializer of first values
+archer.takeVacation(days: 5)
+print(archer.vacationRemaining)
+
+//archer.vacation -= 5
+//print(archer.vacation)
+archer.vacationTaken += 4
+print(archer.vacationRemaining)
+archer.vacationTaken += 4
+print(archer.vacationRemaining)
+
+archer.vacationRemaining = 5
+
+print(archer.vacationAllocated)
+
+
+struct Game {
+    var score = 0 {
+        didSet {
+            print("Score now (score)")
+        }
+    }
+}
+
+
+var game123 = Game()
+game123.score += 10
+
+
+/// PROPERTY CHANGEs
+struct App {
+    var contacts = [String]() {
+        willSet {
+            print("Current value is \(contacts)")
+            print("New value was: \(newValue)")
+        }
+        
+        didSet {
+            print("There are now \(contacts.count) contacts")
+            print("Old value was: \(oldValue)")
+            
+        }
+    }
+}
+
+var app = App()
+app.contacts.append("Adrian")
+app.contacts.append("Allen")
+app.contacts.append("Ish")
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
