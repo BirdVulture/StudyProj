@@ -822,6 +822,52 @@ struct Employee1 {
 
 
 
+///CLASSES How to create your own classes
+
+
+class Game1 {
+    var score = 0 {
+        didSet {
+            print("Score is now\(score)")
+        }
+    }
+}
+
+var newGame = Game1()
+newGame.score += 10
+
+
+/// How to make one class inherit from another
+
+
+class Employee2 {
+    let hours: Int
+    
+    init(hours: Int) {
+        self.hours = hours
+    }
+}
+
+
+class Developer: Employee2 {
+    func work() {
+        print("Im witting code for \(hours) hours")
+    }
+}
+
+class Manager: Employee2 {
+    func work() {
+        print("I'm going to meetings for \(hours) hours")
+    }
+}
+
+let robert = Developer(hours: 8)
+let joseph = Manager(hours: 10)
+
+robert.work()
+joseph.work()
+
+
 
 
 
