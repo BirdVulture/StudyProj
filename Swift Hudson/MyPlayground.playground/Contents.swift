@@ -846,12 +846,20 @@ class Employee2 {
     init(hours: Int) {
         self.hours = hours
     }
+    
+    func printSummary() {
+        print("I work \(hours) hours a day")
+    }
 }
 
 
-class Developer: Employee2 {
+final class Developer: Employee2 {  ///this class do not have chilgren
     func work() {
         print("Im witting code for \(hours) hours")
+    }
+    
+    override func printSummary() {       /// rewrite function
+        print("New message \(hours) hours")
     }
 }
 
@@ -867,8 +875,56 @@ let joseph = Manager(hours: 10)
 robert.work()
 joseph.work()
 
+let novall = Developer(hours: 6)
+
+novall.printSummary()
+
+///initializers for classes
+
+class Vehicle {
+    let isElectric: Bool
+    
+    init(isElectric: Bool) {
+        self.isElectric = isElectric
+    }
+}
+
+class Car: Vehicle {
+    let isConvertible: Bool
+    
+    init(isElectric: Bool, isConvertible: Bool) {
+        self.isConvertible = isConvertible
+        super.init(isElectric: isElectric)
+    }
+    
+}
+
+let teslaX = Car(isElectric: true, isConvertible: false)
+
+/// how to copy classes
+
+class User {
+    var username = "Anonymous"
+    
+    func copy() ->  User {
+        let user = User()
+        user.username = username
+        return user
+    }
+    
+}
 
 
+
+
+var user11 = User()
+
+var user31 = user11.copy()
+
+user31.username = "Taylor"
+
+print(user11.username)
+print(user31.username)
 
 
 
