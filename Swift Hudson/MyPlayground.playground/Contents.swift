@@ -926,7 +926,102 @@ user31.username = "Taylor"
 print(user11.username)
 print(user31.username)
 
-///deinitializer for a class
+///variables inside classes
+
+class AppUser {
+    var name = "Paul"
+}
+
+let appUser = AppUser()
+appUser.name = "Taylor"
+
+print(appUser.name)
+
+
+/// PROTOCOLS How to create and use protocols
+
+protocol VehicleRed {
+    var name: String { get }
+    var currentPassengers: Int { get set }
+    func estimateTime(for distance: Int ) -> Int
+    func travel(distance: Int)
+}
+
+struct RedCar: VehicleRed {
+    let name = "Car"
+    var currentPassengers = 1
+    
+    func estimateTime(for distance: Int) -> Int {
+        distance / 50
+    }
+    
+    func travel(distance: Int) {
+        print("I'm driving \(distance) km")
+    }
+    
+    func openSunroof() {
+        print("It's a nice day!")
+    }
+}
+
+struct Bicycle: VehicleRed {
+    let name = "Bicycle"
+    var currentPassengers = 1
+    
+    func estimateTime(for distance: Int) -> Int {
+        distance / 10
+    }
+    
+    func travel(distance: Int) {
+        print("I'm cicling \(distance) km")
+    }
+}
+    
+func commute(distance: Int, using vehicleRed: VehicleRed) {
+    if vehicleRed.estimateTime(for: distance) > 100 {
+        print("That's too slow")
+    } else {
+        vehicleRed.travel(distance: distance)
+    }
+}
+
+
+func getTravelEstimates(using vevicles: [VehicleRed], distance: Int) {
+    for vehicle in vevicles {
+        let estimate = vehicle.estimateTime(for: distance)
+        print ("\(vehicle.name): \(estimate) hours to travel \(distance) km")
+    }
+}
+
+let redCar = RedCar()
+commute(distance: 50, using: redCar)
+
+let bike = Bicycle()
+
+commute(distance: 10, using: bike)
+
+getTravelEstimates(using: [redCar, bike], distance: 150)
+
+
+
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
 
 
 

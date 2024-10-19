@@ -1,20 +1,49 @@
 import Cocoa
 
-var ex = { (num: Int) -> Int in
-    num * 2
+class Animal {
+    var name = "Animal name"
+    
+    init(name: String = "Animal name") {
+        self.name = name
     }
-
-print(ex(2))
-
-
-func exemple(nums: Int) -> Int{
-    var dat = nums * 2
-    return dat
+    
 }
 
-var data2: (Int) -> Int = exemple
+class Dog: Animal {
+    let haveTail: Bool
+    
+    func speak() {
+        print("gaf")
+    }
+    
+    init(name: String, haveTail: Bool) {
+        self.haveTail = haveTail
+        super.init(name: name)
+    }
+    
+}
 
-var numb = data2(12)
+class Cat: Animal {
+    let haveTail: Bool
+    
+    func speak() {
+        print("miu")
+    }
+    
+    init(name: String, haveTail: Bool) {
+        self.haveTail = haveTail
+        super.init(name: name)
+    }
+    
+}
+
+let bosya = Cat(name: "Bosya", haveTail: true)
+
+bosya.speak()
+
+let basya = Dog(name: "Basik", haveTail: true)
+
+basya.speak()
 
 
 
