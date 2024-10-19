@@ -1003,9 +1003,17 @@ commute(distance: 10, using: bike)
 getTravelEstimates(using: [redCar, bike], distance: 150)
 
 
+///use opaque return types
 
+func getRandomNumber() -> Int {
+    Int.random(in: 1...6)
+}
+
+func getRandomBool() -> Bool {
+    Bool.random()
+}
         
-        
+print(getRandomNumber() == getRandomNumber())
         
         
         
