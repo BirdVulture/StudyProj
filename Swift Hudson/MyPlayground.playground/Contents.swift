@@ -1028,9 +1028,195 @@ func getRandomBool1() -> some Equatable {
         
 ///EXTENSIONS
 
+var quoteNew = "    The truth is rarely pure and never simple"
 
+let trimmed = quoteNew.trimmingCharacters(in: .whitespacesAndNewlines)
+
+extension String {
+    func trimmed() -> String {
+        self.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+}
+
+func trim(_ string: String) -> String {
+        string.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+let trimmed2 = trim(quote)
+
+
+extension String {
+    mutating func trim3() {
+        self = self.trimmed()
+    }
+}
+
+extension String {
+    func trimmed4() -> String {
+        self.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    mutating func trim5() {
+        self = self.trimmed()
+    }
+    var lines: [String] {
+        self.components(separatedBy: .newlines)
+    }
+}
+
+let lyrics = """
+but I keep cruising
+Can't atop, won't stop moving
+It's like I got  this music in my mind
+Saying it's gonna be alright 
+"""
+
+print(lyrics.lines.count)
+
+struct Book {
+    let title: String
+    let pageCount: Int
+    let readingHours: Int
     
     
+}
+
+extension Book {
+    init(title: String, pageCount: Int) {
+        self.title = title
+        self.pageCount = pageCount
+        self.readingHours = pageCount / 50
+    }
+}
+
+
+let lotr = Book(title: "Lord of Rings", pageCount: 1178)
+
+
+
+///How to create and use protocol extension
+
+extension Collection {
+    var isNotEmpty: Bool {
+        isEmpty == false
+    }
+}
+
+
+
+
+let guests = ["Mario", "Luigi", "Peach"]
+
+if guests.isEmpty == false {
+    print("Guest count: \(guests.count)")
+ 
+}
+
+if guests.isNotEmpty {
+    print("Guest count: \(guests.count)")
+}
+
+protocol Person {
+    var name: String { get }
+    func sayHello()
+    
+}
+
+extension Person {
+    func sayHello() {
+        print("Hi, I'm \(name)")
+    }
+}
+
+struct EmployeeNew: Person {
+    let name: String
+}
+
+let taylor = EmployeeNew(name: "Taylor Swift")
+taylor.sayHello()
+
+
+///How to get the most from protocol extensions
+
+
+
+extension Int {
+    func squared() -> Int {
+        self * self        /// self - current value
+    }
+}
+
+extension Numeric {
+    func squared() -> Self { /// Self - current data type
+        self * self
+    }
+}
+
+
+let wholeNumber = 5
+print(wholeNumber.squared())
+
+
+struct UserOne: Equatable, Comparable {
+    let name: String
+    
+    static func <(lhs: UserOne, rhs: UserOne) -> Bool {
+        lhs.name < rhs.name
+}
+
+
+}
+
+
+let userone = UserOne(name: "Link")
+let usertwo = UserOne(name: "Zelda")
+
+print(userone == usertwo)
+print(userone != usertwo)
+print(userone < usertwo)
+
+/// How to handle missing data with optional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
     
