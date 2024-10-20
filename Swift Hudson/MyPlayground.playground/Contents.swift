@@ -1005,6 +1005,9 @@ getTravelEstimates(using: [redCar, bike], distance: 150)
 
 ///use opaque return types
 
+
+protocol Wiev { }
+
 func getRandomNumber() -> Int {
     Int.random(in: 1...6)
 }
@@ -1015,9 +1018,17 @@ func getRandomBool() -> Bool {
         
 print(getRandomNumber() == getRandomNumber())
         
+func getRandomNumber1() -> some Equatable {
+    Int.random(in: 1...6)
+}
+
+func getRandomBool1() -> some Equatable {
+    Bool.random()
+}
         
-        
-        
+///EXTENSIONS
+
+
     
     
     

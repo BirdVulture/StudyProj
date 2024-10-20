@@ -1,49 +1,17 @@
 import Cocoa
 
-class Animal {
-    var name = "Animal name"
+func max_lengt(a: Int, b: Int, c: Int) -> Int {
+    var maxValue = a
     
-    init(name: String = "Animal name") {
-        self.name = name
+    if b > maxValue {
+        maxValue = b
     }
-    
+    if c > maxValue {
+        maxValue = c
+    }
+        
+    return maxValue
 }
 
-class Dog: Animal {
-    let haveTail: Bool
-    
-    func speak() {
-        print("gaf")
-    }
-    
-    init(name: String, haveTail: Bool) {
-        self.haveTail = haveTail
-        super.init(name: name)
-    }
-    
-}
-
-class Cat: Animal {
-    let haveTail: Bool
-    
-    func speak() {
-        print("miu")
-    }
-    
-    init(name: String, haveTail: Bool) {
-        self.haveTail = haveTail
-        super.init(name: name)
-    }
-    
-}
-
-let bosya = Cat(name: "Bosya", haveTail: true)
-
-bosya.speak()
-
-let basya = Dog(name: "Basik", haveTail: true)
-
-basya.speak()
-
-
+print(max_lengt(a: 100, b: 20, c: 55))
 
