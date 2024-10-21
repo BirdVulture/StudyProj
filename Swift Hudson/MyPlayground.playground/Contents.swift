@@ -1175,13 +1175,95 @@ print(userone == usertwo)
 print(userone != usertwo)
 print(userone < usertwo)
 
-/// How to handle missing data with optional
+/// How to handle missing data with optional OPtional - may have or have not value
+
+let opposites = ["Mario": "Wario", "Luigi": "Waluigi"]
+
+let peachOpposite = opposites["Peach"]
+
+if let marioOpposite = opposites["Mario"] {
+    print("Mario's opposite is \(marioOpposite)")
+}
+var usernameOne: String? = nil
+
+if let unwrappedName = usernameOne {
+    print("We got a user: \(unwrappedName)")
+} else {
+    print("The optional was was empty")
+}
+
+var numb1 = 1_000_000
+var num2 = 0
+var num3: Int? = nil ///empty - null
+
+var str1 = "Hello"
+var str2 = ""
+var str3: String? = nil ///empty - null
+
+var arr1 = [0]
+var arr2 = [Int]()
+var arr3: [Int]? = nil
 
 
+func square2(number: Int) -> Int {
+    number * number
+}
 
+var numberr: Int? = nil
 
+if let unwrappedNumber = numberr {
+    print(square2(number: unwrappedNumber))
+}
 
+if let numberr = numberr {
+    print(square2(number: numberr))
+}
 
+///How to unwrap optionals with guard
+
+func printSquare(of number: Int?) {
+    guard let number = number else {
+        print("Missing input")
+        return
+        
+    }
+    
+    print("\(number) x  \(number) is \(number * number)")
+}
+
+var myVar: Int? = 3
+
+if let unwrapped = myVar {
+    
+}
+
+///How to unwrap optionals with nil coalescing
+
+let captains = [
+    "Enterprise": "Picard",
+    "Voyager": "Janeway",
+    "Defiant": "Sisko"
+]
+
+let new = captains["Serenity"] ?? "N/A" // new vil be non optional
+
+let tvSwows = ["Archer", "Babilon 5", "Ted Lasso"]
+let favorite = tvSwows.randomElement() ?? "None"
+
+struct Book1 {
+    let title: String
+    let author1: String?
+}
+
+let book1 = Book1(title: "Beowulf", author1: nil)
+let author = book1.author1 ?? "Anonymous"
+print(author)
+
+let input = ""
+let number123 = Int(input) ?? 0 //0 - default value if the value is missing
+print(number123)
+
+///How to handle multiple optionals using optional chaining
 
 
 
