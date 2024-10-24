@@ -1265,6 +1265,47 @@ print(number123)
 
 ///How to handle multiple optionals using optional chaining
 
+let names2 = ["Araya", "Bran", "Robb", "Sansa"]
+
+let chosen = names2.randomElement()?.uppercased() ?? "No one"
+
+
+struct NewBook {
+    let title: String
+    let auther: String?
+}
+
+var newBook: NewBook? = nil
+let new_author = newBook?.auther?.first?.uppercased() ?? "A"
+
+print(new_author)
+
+///How to handle function failure with optionals
+
+enum UserError: Error {
+    case badID, networkfailed
+}
+
+func getUserData(id: Int) throws -> String {
+    throw UserError.networkfailed
+}
+
+if let user = try? getUserData(id: 23) {
+    print("User: \(user)")
+}
+
+let userX = (try? getUserData(id: 23)) ?? "Anonymous"
+print(userX)
+
+
+
+
+
+
+
+
+
+
 
 
 

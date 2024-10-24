@@ -1,17 +1,14 @@
 import Cocoa
 
-func max_lengt(a: Int, b: Int, c: Int) -> Int {
-    var maxValue = a
-    
-    if b > maxValue {
-        maxValue = b
-    }
-    if c > maxValue {
-        maxValue = c
-    }
-        
-    return maxValue
+var data = [Int]()
+
+data = [1, 2, 3]
+func ranData(data: [Int]) -> Int {
+    let ranNum = data
+    let value =  ranNum.randomElement() ?? 0
+    return value
 }
 
-print(max_lengt(a: 100, b: 20, c: 55))
+let value = ranData(data: data)
+
 
