@@ -1,11 +1,15 @@
 #урок1
 
-def rev():
-    x = int(input())
-    if x != 0:
-        rev()
+min = int(input())
+max = int(input())
+
+def rec(max):
+    global min
+    x = max
+    if x != min:
+        rec(max - 1)
     print(x)
  
     
-rev()
+rec(max)
             
