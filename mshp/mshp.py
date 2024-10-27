@@ -1,14 +1,13 @@
 #урок1
 
-def deposit(x, a, n):
-    summ = x
-    for i in range(n):
-        summ = summ + (summ * a / 100)
-    
-    return summ
+def fib(n):
+    if n == 2:
+        return 1
+    elif n == 1:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
 
-
-
-x, a, n = list(map(int, input().split()))
-print("{:.4f}".format(deposit(x, a, n)))
+n = int(input())
+print(fib(n))
             
