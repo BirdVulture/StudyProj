@@ -1,14 +1,27 @@
 #урок1
 
-def deposit(x, a, n):
-    summ = x
-    for i in range(n):
-        summ = summ + (summ * a / 100)
-    
-    return summ
+
+min = int(input())
+max = int(input())
+
+
+def count(n):
+   global min
+
+   #n - это номер слоя
+
+   if n == min:
+
+       return min
+
+   else:
+        x = count(n-1) + 1
+        return x
+
+#для 101 слоя вызов такой
+
+print(count(max))
 
 
 
-x, a, n = list(map(int, input().split()))
-print("{:.4f}".format(deposit(x, a, n)))
             

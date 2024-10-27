@@ -13,8 +13,8 @@ import arcade.key
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
 TITLE = "Пинг понг"
-CHANGE_X = 10
-CHANGE_Y = 10
+CHANGE_X = 6
+CHANGE_Y = 6
 
 
 class Ball(arcade.Sprite):
@@ -45,6 +45,7 @@ class Game(arcade.Window):
         self.setup()
         self.score = 0
         self.attempts = 3
+        self.game = True
     def setup(self):
         self.ball.center_x = SCREEN_WIDTH / 2
         self.ball.center_y = SCREEN_HEIGHT / 2
@@ -52,7 +53,8 @@ class Game(arcade.Window):
         self.ball.change_y = CHANGE_Y
         self.bar.center_x = SCREEN_WIDTH / 2
         self.bar.center_y = 0
-    
+        
+
     def on_draw(self):
         self.clear((255, 255, 255))
         self.ball.draw()
@@ -61,15 +63,21 @@ class Game(arcade.Window):
         arcade.draw_text(f"Попытки: {self.attempts}", 20, SCREEN_HEIGHT - 70, (0,0,0), 20)
         if self.attempts == 0:
             arcade.draw_text("GAME OVER", SCREEN_HEIGHT / 6, SCREEN_WIDTH / 2, (255, 33, 33), 50)
+            self.game = False
+        if self.score == 20:
+            arcade.draw_text("YOU WIN", SCREEN_HEIGHT / 6, SCREEN_WIDTH / 2, (255, 33, 33), 50)
+            self.game = False
 
 
     #def on_key_press(self, key, modifiers):
     def on_key_press(self, symbol: int, modifiers: int):
-        if symbol == arcade.key.A:
-            self.bar.change_x = -CHANGE_X
-        if symbol == arcade.key.D:
-            self.bar.change_x = CHANGE_X
-        print(arcade.key.LEFT)   
+        if self.game == True:
+            if symbol == arcade.key.A:
+                self.bar.change_x = -CHANGE_X
+            if symbol == arcade.key.D:
+                self.bar.change_x = CHANGE_X
+            print(arcade.key.LEFT)   
+        
 
     def on_key_release(self, key, modifiers):
         if key == arcade.key.A or key == arcade.key.D:
@@ -104,12 +112,9 @@ class Game(arcade.Window):
         if self.attempts == 0:
             self.ball.stop()
             self.bar.stop()  
-                      
-
-    
-
-
-
+        if self.game == False:
+            self.ball.stop()
+            self.bar.stop()
 
 
 window = Game(SCREEN_WIDTH, SCREEN_HEIGHT, TITLE)
