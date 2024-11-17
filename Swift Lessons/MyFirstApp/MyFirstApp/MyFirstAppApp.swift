@@ -1,15 +1,15 @@
 //
-//  MyFirstProjectApp.swift
-//  MyFirstProject
+//  MyFirstAppApp.swift
+//  MyFirstApp
 //
-//  Created by Oleg Z on 09.11.2024.
+//  Created by Oleg Z on 15.11.2024.
 //
 
 import SwiftUI
 import SwiftData
 
 @main
-struct MyFirstProjectApp: App {
+struct MyFirstAppApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,

@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  MyFirstProject
+//  MyFirstApp
 //
-//  Created by Oleg Z on 09.11.2024.
+//  Created by Oleg Z on 15.11.2024.
 //
 
 import SwiftUI
