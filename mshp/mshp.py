@@ -1,11 +1,15 @@
-#урок1
-s = input()
-s = s.strip(" ")
-s = s.lower()
-s = s.replace("ну", "") 
-s = s.replace("типо", "") 
-s = s.replace("как бы", "")
-print(s)
+
+
+def replace_name():
+    #имя
+    w = str(input())
+    #строка
+    w1 = str(input())
+    if w1.find(w) == True:
+        w1 = w1.replace(w, "[username]")
+    print(w1)
+
+replace_name()
 
 
 
