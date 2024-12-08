@@ -17,47 +17,54 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State private var users = ["Paul", "Taylor", "Adele"]
-    @State private var selection: String? = nil
-    
-    
+    @State private var data = [1, 1, 1, 1]
+    @State private var selected = 0
 
     var body: some View {
-        
-            VStack {
+        VStack {
+            Spacer()
+            HStack {
                 Spacer()
-                HStack {
-                    Button("Add data") {
-                        users.append("A")
-                    }
-                  
+                Button("Add data") {
+                    addData()
                 }
                 Spacer()
-                List {
-                    ForEach(users, id: \.self) { user in
-                        NavigationLink {
-                            Text(user)
-                        }
-                        label: {
-                            HStack {
-                                Text("User \(user)")
-                                Spacer()
-                                Text("Delete")
-                                    .onTapGesture {
-                                        print("OOk")
-                                    }
-                            }
-                        }
-                        
-                    }
-                }
-                
-                        
-                }
                 
             }
-        
-         
+            Spacer()
+            List {
+                  ForEach(data, id: \.self) { element in
+                      HStack {
+                          Text("Data \(element)")
+                          Spacer()
+                          Image(systemName: "delete.left")
+                              .onTapGesture {
+                                  print("element \(element)" )
+                                  print(data)
+                                  print(data.firstIndex(of: element) ?? 0)
+                                  let indexValue = data.firstIndex(of: element) ?? 0
+                                  print(indexValue)
+                                  deleteData(index: indexValue)
+                                  print(data)
+                                  
+                              }
+                                  
+                                  
+                        
+                      }
+                  }
+                }
+            
+        }
+    }
+    
+    func addData() {
+        data.append(data.count + 1)
+    }
+    
+    func deleteData(index: Int) {
+        data.remove(at: index)
+    }
 }
 
     
@@ -73,10 +80,7 @@ struct ContentView: View {
 
 
 
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }
 
