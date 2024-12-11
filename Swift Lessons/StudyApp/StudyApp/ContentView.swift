@@ -14,10 +14,13 @@
 
 import SwiftUI
 
-
+struct Task: Identifiable {
+    var id: ObjectIdentifier
+    
+    }
 
 struct ContentView: View {
-    @State private var data = [1, 1, 1, 1]
+    @State private var data = [1, 2, 3, 4]
     @State private var selected = 0
 
     var body: some View {
@@ -41,7 +44,7 @@ struct ContentView: View {
                               .onTapGesture {
                                   print("element \(element)" )
                                   print(data)
-                                  print(data.firstIndex(of: element) ?? 0)
+                                  
                                   let indexValue = data.firstIndex(of: element) ?? 0
                                   print(indexValue)
                                   deleteData(index: indexValue)
