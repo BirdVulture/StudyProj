@@ -89,9 +89,43 @@ if areYouHappy && isTheWeatherGood {
 
 // УСЛОВИЯ
 
+let firstCard = 10
+let secondCard = 10
 
+if firstCard + secondCard == 21 {
+    print("You are win")
+} else if (firstCard + secondCard) > 18 && (firstCard + secondCard) < 21 {
+    print("Good cards")
+} else {
+    print("Regular cards")
+}
 
+let age1 = 18
+let age2 = 21
 
+if age1 > 18 && age2 > 18 {
+    print("Both are other 18" )
+}
+
+let weather = "sunny"
+
+switch weather {
+case "rain": print("Bring an umbrella")
+case "snow": print("Wrap it warm")
+case "sunny": print("Wear glasses")
+    fallthrough //Провалиться дальше
+default: print("enjoy")
+}
+
+switch age1 {
+case 0...10: print("You are too young")
+case 13..<20: print("You are teenager")
+case 20...60: print("You are grown man")
+case 80...: print("You are old man")
+default: print("How old are you?")
+}
+
+//ЦИКЛЫ
 
 
 
