@@ -125,9 +125,75 @@ case 80...: print("You are old man")
 default: print("How old are you?")
 }
 
-//ЦИКЛЫ
+//ЦИКЛЫ for in / while / repeat while
+
+let count = 1...3
+
+for number in count {
+    print("Number is \(number)")
+    
+}
+
+for index in 0...3 {
+    print("\(index) умножить на 3 равно \(index * 3)")
+}
+
+var number1 = 1
+
+while number1 <= 3 {
+    print(number1)
+    number1 += 1
+}
+
+print("Start!")
+
+//СОСТАВНОЙ ТИП ДАННЫХ tuple используется для временного хранения данных
+
+var person = (name: "Igor", age: 40, isMarried: true, weight: 70.5)
+
+var tuple1 = (a, b)
+
+var tuple2 = (10, "Hello")
+
+var tuple3: (Int, String)
+
+var tuple4 = (name: "Igor", age: 40, isMarried: true, weight: 70.5)
+
+tuple4.0
+tuple4.1
+
+tuple4.name
+tuple4.age
+
+var (name, age, isMarried, weight) = tuple4 //разборка tuple4 на элементы
+
+name
+age
+isMarried
+tuple4
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            
 
 
 
