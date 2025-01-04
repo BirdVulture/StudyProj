@@ -221,6 +221,72 @@ num2 = num2 + 1
 
 
 
+// КОЛЛЕКЦИИ: массивы, множества, словари
+// Массивы
+
+var arr1 = Array<String>()
+
+var arr2 = [String]()
+
+let apple = "apple"
+let lemon = "lemon"
+let orange = "orange"
+let strawberry = "strawberry"
+
+let fruits = [apple, lemon, orange, strawberry]
+
+var shoppingList = ["eggs", "milk", "bread", "flour", "sweets"]
+
+// Доступ к массиву - через методы или через индексы
+// методы
+shoppingList.count // счет количества элементов в массиве
+
+shoppingList.isEmpty // проверка на наличие значений
+
+shoppingList.append("butter") // добавление в конец списка
+
+shoppingList.insert("sugar", at: 0) // вставка нового элемента на место старого по индексу
+
+// доступ через индексы
+shoppingList[0]
+
+shoppingList[1] = "salt" // переназначение элемента массива
+
+// Перебор элементов массива через цикл
+
+for i in shoppingList {
+    print(i)
+}
+
+//индексы и значения массива через цикл
+
+for (index, value) in shoppingList.enumerated() {
+    print("Index \(index): \(value) ")
+}
+
+// сложение массивов
+
+shoppingList += ["pepper"]
+
+var numb1 = [1, 2, 3, 4, 5]
+var numb2 = [6, 7, 8, 9]
+
+var numb3 = numb1 + numb2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
