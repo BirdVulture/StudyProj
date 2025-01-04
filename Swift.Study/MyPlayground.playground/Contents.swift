@@ -173,6 +173,52 @@ isMarried
 tuple4
 
 
+// ОПЦИОНАЛЬНЫЕ ТИПЫ ДАННЫХ
+
+var age11: Int? = 12
+
+age11 = nil
+
+// 1 force unwrapping ---!
+if age11 == nil {
+    print("age is nil")
+} else {
+    age11! + 1
+    
+}
+
+
+//2 Optional binding
+let str1  = "5"
+
+let num1 = Int(str1)
+
+if var safeAge = age11 {
+    safeAge += 1
+}
+
+let yearOfBirth = "1980"
+
+if let safeYearOfBirth = Int(yearOfBirth) {
+    safeYearOfBirth
+}
+
+// 3 Опциональное связование ??
+
+var example: String? = "Hello"
+
+print(example ?? "example = nil")
+
+// 4 Неявно извлеченные опционалы
+
+// int, Int?, Int!
+
+var num2: Int! = nil
+
+num2 = 10
+
+num2 = num2 + 1
+
 
 
 
