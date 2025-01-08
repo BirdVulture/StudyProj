@@ -222,7 +222,7 @@ num2 = num2 + 1
 
 
 // КОЛЛЕКЦИИ: массивы, множества, словари
-// Массивы
+// Array Массив
 
 var arr1 = Array<String>()
 
@@ -273,17 +273,119 @@ var numb2 = [6, 7, 8, 9]
 
 var numb3 = numb1 + numb2
 
-// Множества
+// SET Множество - когда порядок не важен, все значения - уникальные
 
+var set = Set<String>()
 
+var listOfSports: Set = ["Babminton", "Bowling", "Tennis", "Hockey"]
 
+// методы для работы множеством
 
+listOfSports.count //подсчет количества элементов в множестве
 
+listOfSports.isEmpty // проверка на наличие значений
 
+listOfSports.insert("Fishing") //вставка нового элемента
 
+listOfSports.remove("Bowling")
 
+listOfSports
 
+listOfSports.contains("Tennis") //проверка наличия значения в множестве
 
+// работа с сетом через итерации (в цикле)
+
+for i in listOfSports {
+    print(i)
+}
+
+listOfSports.sorted() // сортировка множества
+
+for i in listOfSports.sorted() {
+    print(i)
+}
+
+// Преобразование массива в множество
+
+let colors1 = ["red", "green", "blue", "red", "green", "blue"]
+
+let colors2 = Set(colors1)
+
+// базовые операции с множествами
+
+let oddNumbers: Set = [1, 3, 5, 7, 9] // нечетные числа
+
+let evenNumbers: Set = [0, 2 ,4, 6, 8] // четные числа
+
+let primeNumbers: Set = [2, 3, 5, 7] // простые числа
+
+// объединенние двух множеств в третье
+oddNumbers.union(evenNumbers).sorted()
+
+// создание множества из общих значений двух других множеств
+
+oddNumbers.intersection(evenNumbers).sorted()
+oddNumbers.intersection(primeNumbers).sorted()
+
+//вычитание одного множества из другого
+
+oddNumbers.subtracting(primeNumbers).sorted()
+
+// создание множества из неповторяющихся значений двух других множеств
+
+oddNumbers.symmetricDifference(primeNumbers).sorted()
+
+//Dictionary - словарь Ключ - значение [key: value]
+
+var diction = [Int: String]()
+
+var heights = ["Ian": 1.75, "Maria": 1.76, "Igor": 1.82, "Olga": 1.56]
+
+// работа со словарем по ключу
+
+heights["Ian"]
+
+var results1 = ["Mathematics": 100, "English": 85, "Geography": 75]
+
+results1["English"]
+
+results1.count //подсчет количества элементов
+results1.isEmpty //проверка на наличие значений
+results1["History"] = 80 // добавление элемента в словарь
+results1["History"] = 90
+
+results1["History"]
+
+//обновление значений через методы
+
+results1.updateValue(70, forKey: "History")
+results1["History"]
+
+//удаление пары ключ-значение из словаря
+
+results1.removeValue(forKey: "History")
+results1["History"]
+
+// итерации со словарем через цикл
+
+for (subject, point) in results1 {
+    print("\(subject): \(point) ")
+}
+
+for subject in results1.keys {
+    print("Subject: \(subject)")
+}
+
+for point in results1.values {
+    print("point: \(point)")
+}
+
+// преобразование в массивы
+
+var keys = Array(results1.keys)
+var values = Array(results1.values)
+
+// ФУНКЦИИ 
 
 
 
