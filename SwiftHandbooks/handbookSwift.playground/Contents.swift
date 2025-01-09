@@ -464,22 +464,85 @@ func sayHello2(_ person: String) {
 
 sayHello2("Ian")
 
+// Параметры по умолчанию
+
+func greet3(_ person: String, nicely: Bool = true) {
+    
+    if nicely == true {
+        print("Hello, \(person)")
+    } else {
+        print("oh no, it's \(person) again")
+    }
+}
+
+greet3("Maria") // по умолчанию nicely = true
 
 
+// Вариативные функции и вариативные параметры - принимает любое количество параметров одного типа
+
+func squareVar(numbers: Int...) {
+    for num in numbers {
+        print("number \(num)")
+    }
+}
+
+squareVar(numbers: 1, 2, 3, 4)
+
+// Сквозные параметры
+
+func doubleIt(number: inout Int) {
+    number *= 2
+}
+
+var myNum = 10
+
+doubleIt(number: &myNum)
 
 
+// КЛОУЖЕРЫ - анонимные функции
 
+let driving = {
+    print("I'm driving in my car") // Клоужер ничего не принимает, только печатает
+}
 
+// вызов клоужера
 
+driving()
 
+let driving2 = { (place: String) in // Клоужер принимает параметр и печатает
+    print("I'm going to \(place)")
+    
+}
 
+driving2("home")
 
+// функция и клоужер
 
+func pay2(user: String, amount: Int) {
+    //
+}
 
+let payment2 = { (user: String, amount: Int) in // in показывает, где начинается тело клоужера
+        //code
+}
 
+let driving3 = { (place: String) in // Клоужер принимает параметр и печатает
+    return "I'm going to \(place)"
+    
+}
 
+let message1 = driving3("London")
 
+print(message1)
 
+// клоужер возвращает значение
+
+let payment3 = { (user: String, amount: Int) -> Bool in
+    print("paying \(user)")
+    return true
+}
+
+//13.40
 
 
 
