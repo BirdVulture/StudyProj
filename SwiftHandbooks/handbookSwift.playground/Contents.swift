@@ -1,3 +1,5 @@
+//https://www.youtube.com/watch?v=CGdcHl8ExcM&list=PLUb9K99oQb2u1swlk6TTuV1vnMEG8ktfV&index=1&pp=iAQB
+
 
 // КОНСТАНТЫ И ПЕРЕМЕННЫЕ
 
@@ -385,9 +387,82 @@ for point in results1.values {
 var keys = Array(results1.keys)
 var values = Array(results1.values)
 
-// ФУНКЦИИ 
+// ФУНКЦИИ
+
+// Объявление и вызов функций
+
+func greetFunc() {
+    print("Hello")
+}
+
+greetFunc()
+
+// Принимать
+
+func square(number: Int) {
+    print(number * number)
+}
+
+square(number: 3)
 
 
+// Возвращать значение в переменную
+
+func square1 (number: Int) -> Int {
+    return number * number
+}
+
+var result123 = square1(number: 5)
+
+print(result123)
+
+// Возвращать несколько значений в tuple
+
+// Решение 1
+func getUser() -> [String] {
+    return ["Ivan", "Ivanov"]
+}
+
+let user1234 = getUser()
+
+print(user1234[0])
+
+
+// решение 2
+func getUser1() -> [String: String] { // функция возвращает словарь
+    return ["firstName": "Ivan", "secondName": "Ivanov"]
+}
+
+let user22 = getUser1()
+
+print(user22["secondName"] ?? "not found")
+
+// решение 3 - с помощью tuple
+
+func getUser2() -> (first: String, second: String) {
+    return (first: "Ivan", second: "Ivanov")
+}
+
+let user23 = getUser2()
+
+print(user23.first)
+
+
+// Имена параметров
+
+func sayHello(to name: String) {
+    print("Hello \(name)")
+}
+
+sayHello(to: "Ian")
+
+// Пропуск имен параметров
+
+func sayHello2(_ person: String) {
+    print("Hello \(person)")
+}
+
+sayHello2("Ian")
 
 
 
