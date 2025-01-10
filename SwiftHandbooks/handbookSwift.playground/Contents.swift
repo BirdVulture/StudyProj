@@ -542,16 +542,38 @@ let payment3 = { (user: String, amount: Int) -> Bool in
     return true
 }
 
-//13.40
+//13.30
+
+// передача клоужера в функцию на примере клоужера driving
+
+func travel(action: () -> Void) {
+    print("I'm getting ready to go")
+    action()
+    print("I arrived")
+}
 
 
+travel(action: driving)
+
+//trailng clouser
+
+travel() {
+    print("I'm driving in my car")
+}
 
 
+func animate(duration: Double, animations: () -> Void ) {
+    print("Starting a \(duration) second animation")
+    animations()
+}
             
-            
+animate(duration: 3, animations: {
+    print("Image")
+})
 
-
-
+animate(duration: 3) {
+    print("Image")
+}
 
 
 
