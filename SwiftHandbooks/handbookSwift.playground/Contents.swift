@@ -576,15 +576,84 @@ animate(duration: 3) {
 }
 
 
+func travel2(action: (String) -> Void) {
+    print("I'm getting ready to go")
+    action("London")
+    print("I arrived")
+}
+
+travel2(action: { (place: String) in
+    print("i'm going to \(place)")
+})
+
+let chageSpeed = {(speed: Int) in
+    print("Changing speed to \(speed)")
+}
+
+func buldCar(name: String, engine: (Int) -> Void) {
+    //code
+}
+
+func travel3(action: (String) -> String) {
+    print("I'm getting ready to go")
+    let deskription = action("London")
+    print(deskription)
+    print("I arrived")
+}
 
 
+travel3(action: { (place: String) -> String in
+        return "I'm going to \(place)"
+})
 
+//сокращенные имена параметров
 
+travel3(action: { place in
+        "I'm going to \(place)"
+})
 
+travel3(action: {
+        "I'm going to \($0)"
+})
 
+func travel4(action: (String, Int) -> String) {
+    print("I'm getting ready to go")
+    let deskription = action("London", 60)
+    print(deskription)
+    print("I arrived")
+}
 
+travel4(action: {
+        "I'm going to \($0) at \($1)"
+})
 
+// возврат клоужера из функции
 
+func travel5() -> (String) -> Void {
+    return { (place: String) in
+        print("I'm going to \(place) ")
+    }
+}
 
+let resultF5 = travel5()
 
+resultF5("london")
+
+// Захват значений клоужером извне  и работа внутри себя (counter)
+
+func travel6() -> (String) -> Void {
+    var counter = 0
+    return { (place: String) in
+        print("I'm going to \(place) ")
+        counter += 1
+    }
+}
+
+let resultF6 = travel6()
+
+resultF6("london")
+resultF6("london")
+resultF6("london")
+
+//Перечисления
 
