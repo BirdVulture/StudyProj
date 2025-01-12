@@ -273,6 +273,7 @@ var numb2 = [6, 7, 8, 9]
 
 var numb3 = numb1 + numb2
 
+
 // Множества
 
 
