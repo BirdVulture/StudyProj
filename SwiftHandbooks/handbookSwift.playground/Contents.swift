@@ -657,3 +657,71 @@ resultF6("london")
 
 //Перечисления
 
+enum Result {
+    case success
+    case failure
+}
+var result4 = Result.failure
+
+result4 = Result.success
+
+result4 = .failure
+
+let result5 : Result
+
+result5 = .success
+
+enum Activity {
+    case dancing
+    case running
+    case talking
+    case singing
+}
+
+let currentActivity = Activity.dancing
+
+switch currentActivity {
+case .dancing: print("Dance")
+case .running: print("Run")
+case .singing: print("Sogn")
+case .talking: print("Talk")
+}
+
+enum Activity2 {
+    case dancing
+    case running(dectination: String)
+    case talking(topic: String)
+    case singing(volume: Int)
+}
+
+let talking1 = Activity2.talking(topic: "Football")
+
+enum Planet: Int {
+    case mercury
+    case venus
+    case earth
+    case mars
+}
+
+
+let earth = Planet(rawValue: 3)
+
+
+enum Phone: String {
+    case Apple = "iPhone 8"
+    case Samsung = "Galaxy S10"
+    case Google = "Pixel 2"
+
+}
+
+
+let myPhone = Phone.Apple
+
+print(myPhone)
+print(myPhone.rawValue)
+
+// КЛАССЫ
+
+
+
+
