@@ -722,6 +722,99 @@ print(myPhone.rawValue)
 
 // КЛАССЫ
 
+class Human {
+    //хранимые свойства
+    var age: Int // свойство класса
+    var name: String
+    
+    // вычисляемые свойства
+    var status: String {
+        get {
+            if isQualified {
+                return "\(name) is qualifies for this job"
+            } else {
+                return "\(name) is not qualifies for this job"
+            }
+        }
+    }
+
+    /*
+    структурная схема вычисляемых свойств
+    var имя_свойства: тип_данных {
+     get {
+        // вычисление значения
+     }
+     set (параметр) {
+        // установка значения
+     }
+     
+     }
+    
+    
+     
+     
+     
+    */
+    var isQualified: Bool
+    
+    func move() {
+        print("\(name) is moving") // метод класса
+    }
+    
+    //инициализатор - функция, выполняющая первоначальную инициализацию объекта
+    
+    init(age: Int, name: String, isQualified: Bool) {
+        self.age = age
+        self.name = name
+        self.isQualified = isQualified
+    }
+}
+
+// экземпляр класса
+
+var maria = Human(age: 25, name: "Maria", isQualified: true)
+
+maria.age
+maria.isQualified
+maria.status
+
+
+class Account {
+    //хранимые свойства
+    var sum: Double = 0 // Сумма вклада
+    var rate: Double = 0.01 // процентная ставка
+    
+    // вычисляемые свойства
+    var profit: Double {
+        get{   // возвращает в profit результат операции
+            return sum + sum * rate
+        }
+        
+        set(newProfit){ // вводим ожидаемую прибыль и получаем необходимую сумму вклада параметр newProfit на входе - можем называть как угодно
+            self.sum = newProfit / (1 + rate)
+            
+        }
+    }
+    
+    init(sum: Double, rate: Double) {
+        self.sum = sum
+        self.rate = rate
+    }
+    
+    
+}
+
+var myAcc: Account = Account (sum: 1000, rate: 0.1) //создали экземпляр класса Аккаунт
+
+myAcc.profit // использовали get
+
+myAcc.profit = 45000 // установили ожидаемую прибыль
+
+myAcc.sum // необходимая сумма вклада для получения этой прибыли
+
+// Наблюдатели свойств (нету)
 
 
 
+
+//СТРУКТУРЫ
