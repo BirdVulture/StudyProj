@@ -3,3 +3,5 @@ b = round(a)
 d = a - b
 print(d )    
 
+#Новая строка
+
