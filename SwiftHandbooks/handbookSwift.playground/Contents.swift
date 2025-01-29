@@ -952,5 +952,57 @@ var dog1 = Dog(name: "Sobaka1", age: 6)
 var dog2 = Dog(name: "Sobaka2", age: 6)
 
 
+// НАСЛЕДОВАНИЕ
+// родительский /супер/ класс и дочерний класс
+
+class Dog2 {
+    var name: String
+    var breed: String //хранимое свойство
+    
+    var info: String {
+        return "The breed of \(name) is a \(breed)" //getter
+    }
+    
+    func makeNoize() -> String {
+        return "Hello"
+    }
+    
+    init(name: String, breed: String) {
+        self.name = name
+        self.breed = breed
+    }
+}
+
+class Corgi: Dog2 {
+    
+    var isHappy: Bool
+    
+    override var info: String {
+        return name + " " + breed
+    }
+    
+    override func makeNoize() -> String {
+        return "Hello, Sir" // переопределение функции
+    }
+    
+    init(isHappy: Bool) {
+        self.isHappy = isHappy
+        super.init(name: "Alisa", breed: "Corgi") // инициализатор свойств родителя
+        
+    }
+    
+}
+
+var corgi = Corgi(isHappy: true)
+
+corgi.name = "Alisa"
+corgi.makeNoize()
+
+corgi.info
+
+
+
+
+
 
 
