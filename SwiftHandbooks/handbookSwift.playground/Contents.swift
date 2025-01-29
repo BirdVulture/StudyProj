@@ -899,3 +899,58 @@ struct Person1 {
 }
 
 // СВОЙСТВА ТИПОВ
+
+class Dog {
+    var name: String // Свойство экземпляра
+    var age: Int {
+        didSet {
+            if age > Dog.maxAge {
+                age = oldValue
+            }
+        }
+    }
+    
+    static let maxAge = 30 // static - свойство класса, не экземпляра
+    
+    nonisolated(unsafe) static var howManyDogs = 0 // количество созданных экземпляров
+    
+    lazy var questions = "Can I ask a question?" // Инициализируется только тогда, когда к этому свойству обращаются
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+        Dog.howManyDogs += 1 // счетчик количества экземпляров
+    }
+}
+
+
+struct Cat {
+    var name: String // Свойство экземпляра
+    var age: Int {
+        didSet { // наблюдатель свойства если значение было изменено и оно не смоотвествует улсовию - возвращается старое значение
+            if age > Cat.maxAge {
+                age = oldValue
+            }
+        }
+    }
+    
+    static let maxAge = 30 // static - свойство структуры, не экземпляра
+
+}
+
+var dog = Dog(name: "Sobaka", age: 5)
+
+var cat = Cat(name: "Koshka", age: 3)
+
+dog.age
+dog.age = 35
+dog.age
+
+Dog.howManyDogs
+
+var dog1 = Dog(name: "Sobaka1", age: 6)
+var dog2 = Dog(name: "Sobaka2", age: 6)
+
+
+
+
