@@ -1000,9 +1000,82 @@ corgi.makeNoize()
 
 corgi.info
 
+// РАСШИРЕНИЯ
+
+extension Int {
+    func squared() -> Int {
+        return self * self
+    }
+    
+    
+    func repetition(task: () -> Void) {
+        for _ in 0..<self {
+            task()
+        }
+    }
+    
+    var isEven: Bool {
+        return self % 2 == 0
+    }
+    
+    
+}
+
+var number111 = 3
+
+number111.isEven
+
+number111.repetition {
+    print("Hello")
+}
 
 
+number111.squared()
 
+extension Double {
+    
+    var m: Double {
+        return self
+    }
+    
+    var cm: Double {
+        return self / 100
+    }
+    
+    var mm: Double {
+        return self / 1000
+    }
+}
 
+var double = 5.0
 
+double.m
 
+double.cm
+
+double.mm
+
+// ПРОТОКОЛЫ
+
+struct Milk {
+    var label: String
+    
+}
+
+class Book {
+    var label: String
+    var amount: Int
+    
+    init(label: String, amount: Int) {
+        self.label = label
+        self.amount = amount
+    }
+}
+
+struct Bread {
+    var color: [String]
+}
+
+func buy(_ milk: Milk) {
+    print("I'm buying \(milk.label)")
+}
