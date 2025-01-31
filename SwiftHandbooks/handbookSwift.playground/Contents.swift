@@ -1055,27 +1055,54 @@ double.cm
 
 double.mm
 
-// ПРОТОКОЛЫ
+// ПРОТОКОЛЫ - перечень свойств и метододов, которые обязаны  включать в себе те классы и структуры, которые поддерживают этот протокол
 
-struct Milk {
+
+protocol ICanBuyIt {
+    var label: String { get set }
+    var price: Int { get set }
+}
+
+
+
+
+
+
+struct Milk: ICanBuyIt {
     var label: String
+    
+    var price: Int
     
 }
 
-class Book {
+class Book: ICanBuyIt {
     var label: String
+    var price: Int
+    
     var amount: Int
     
-    init(label: String, amount: Int) {
+    init(label: String, amount: Int, price: Int) {
         self.label = label
         self.amount = amount
+        self.price = price
     }
 }
 
-struct Bread {
+struct Bread: ICanBuyIt {
+    var label: String
+    var price: Int
     var color: [String]
 }
 
-func buy(_ milk: Milk) {
-    print("I'm buying \(milk.label)")
+func buy(_ item: ICanBuyIt) {
+    print("I'm buying \(item.label) It cost me \(item.price)")
 }
+
+protocol Identifiable {
+    var id: String { get set}
+}
+
+struct User123: Identifiable {
+    var id: String
+}
+
