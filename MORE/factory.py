@@ -105,11 +105,4 @@ store_two = Store(0) #Склад готовой продукции
 
 
 
-machine_one.production()
 
-public static String getTransId() {
-    long timestamp = System.currentTimeMillis() * 1000;
-    String result = String.format("%020d", timestamp);
-    logger.debug("Generated transId: '{}'", result);
-    return result;
-}
