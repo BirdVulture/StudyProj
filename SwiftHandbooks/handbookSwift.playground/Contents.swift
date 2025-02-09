@@ -819,4 +819,290 @@ myAcc.sum // необходимая сумма вклада для получе�
 
 //СТРУКТУРЫ
 
+class Human2 {
+    var age: Int
+    var name: String
+    
+    init(age: Int, name: String) {
+        self.age = age
+        self.name = name
+    }
+}
+
+var human2 = Human2(age: 20, name: "Igor")
+// свойства экземпляра класса можно изменять если свойство переменная а класс - константа!!!
+
+human2.age
+
+
+
+
+struct Human3 {
+    var age: Int
+    var name: String
+}
+
+// Для структуры не нужен инициализатор
+var human3 = Human3(age: 25, name: "Maria")
+
+// свойства экземпляра структуры можно изменять если свойство и структура - переменные
+
+human3.age
+human3.age = 35
+human3.age
+
+
+//value type - Int, String, Bool, struct, Array и др
+// при копировании типа значение происходит копирование самого значения, исходный экземпляр не меняется и не связан
+
+
+// reference type - enum, class
+
+var human31 = Human3(age: 30, name: "Olga")
+
+human31 = human3
+
+
+var human21 = Human2(age: 50, name: "Stas")
+
+human21 = human2 //скопировали референс в другой экземпляр
+human21.age
+human21.name
+
+human21.age = 60
+human21.name = "Vitaliy"
+
+
+human2.age // Изменились значения екземпляра, который был приравнен!
+human2.name
+
+// Отличия в методах между классом и структурой
+
+class Person2 {
+    var name: String
+    
+    func makeAnonymous() {
+        name = "Anonymous"
+    }
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
+struct Person1 {
+    var name: String
+    
+    mutating func makeAnonymous() { // для метода, изменяющего свойство в структуре, надо добавлять mutating
+        name = "Anonymous"
+    }
+}
+
+// СВОЙСТВА ТИПОВ
+
+class Dog {
+    var name: String // Свойство экземпляра
+    var age: Int {
+        didSet {
+            if age > Dog.maxAge {
+                age = oldValue
+            }
+        }
+    }
+    
+    static let maxAge = 30 // static - свойство класса, не экземпляра
+    
+    nonisolated(unsafe) static var howManyDogs = 0 // количество созданных экземпляров
+    
+    lazy var questions = "Can I ask a question?" // Инициализируется только тогда, когда к этому свойству обращаются
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+        Dog.howManyDogs += 1 // счетчик количества экземпляров
+    }
+}
+
+
+struct Cat {
+    var name: String // Свойство экземпляра
+    var age: Int {
+        didSet { // наблюдатель свойства если значение было изменено и оно не смоотвествует улсовию - возвращается старое значение
+            if age > Cat.maxAge {
+                age = oldValue
+            }
+        }
+    }
+    
+    static let maxAge = 30 // static - свойство структуры, не экземпляра
+
+}
+
+var dog = Dog(name: "Sobaka", age: 5)
+
+var cat = Cat(name: "Koshka", age: 3)
+
+dog.age
+dog.age = 35
+dog.age
+
+Dog.howManyDogs
+
+var dog1 = Dog(name: "Sobaka1", age: 6)
+var dog2 = Dog(name: "Sobaka2", age: 6)
+
+
+// НАСЛЕДОВАНИЕ
+// родительский /супер/ класс и дочерний класс
+
+class Dog2 {
+    var name: String
+    var breed: String //хранимое свойство
+    
+    var info: String {
+        return "The breed of \(name) is a \(breed)" //getter
+    }
+    
+    func makeNoize() -> String {
+        return "Hello"
+    }
+    
+    init(name: String, breed: String) {
+        self.name = name
+        self.breed = breed
+    }
+}
+
+class Corgi: Dog2 {
+    
+    var isHappy: Bool
+    
+    override var info: String {
+        return name + " " + breed
+    }
+    
+    override func makeNoize() -> String {
+        return "Hello, Sir" // переопределение функции
+    }
+    
+    init(isHappy: Bool) {
+        self.isHappy = isHappy
+        super.init(name: "Alisa", breed: "Corgi") // инициализатор свойств родителя
+        
+    }
+    
+}
+
+var corgi = Corgi(isHappy: true)
+
+corgi.name = "Alisa"
+corgi.makeNoize()
+
+corgi.info
+
+// РАСШИРЕНИЯ
+
+extension Int {
+    func squared() -> Int {
+        return self * self
+    }
+    
+    
+    func repetition(task: () -> Void) {
+        for _ in 0..<self {
+            task()
+        }
+    }
+    
+    var isEven: Bool {
+        return self % 2 == 0
+    }
+    
+    
+}
+
+var number111 = 3
+
+number111.isEven
+
+number111.repetition {
+    print("Hello")
+}
+
+
+number111.squared()
+
+extension Double {
+    
+    var m: Double {
+        return self
+    }
+    
+    var cm: Double {
+        return self / 100
+    }
+    
+    var mm: Double {
+        return self / 1000
+    }
+}
+
+var double = 5.0
+
+double.m
+
+double.cm
+
+double.mm
+
+// ПРОТОКОЛЫ - перечень свойств и метододов, которые обязаны  включать в себе те классы и структуры, которые поддерживают этот протокол
+
+
+protocol ICanBuyIt {
+    var label: String { get set }
+    var price: Int { get set }
+}
+
+
+
+
+
+
+struct Milk: ICanBuyIt {
+    var label: String
+    
+    var price: Int
+    
+}
+
+class Book: ICanBuyIt {
+    var label: String
+    var price: Int
+    
+    var amount: Int
+    
+    init(label: String, amount: Int, price: Int) {
+        self.label = label
+        self.amount = amount
+        self.price = price
+    }
+}
+
+struct Bread: ICanBuyIt {
+    var label: String
+    var price: Int
+    var color: [String]
+}
+
+func buy(_ item: ICanBuyIt) {
+    print("I'm buying \(item.label) It cost me \(item.price)")
+}
+
+protocol Identifiable {
+    var id: String { get set}
+}
+
+struct User123: Identifiable {
+    var id: String
+}
 
