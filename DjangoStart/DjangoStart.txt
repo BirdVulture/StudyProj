@@ -1,0 +1,8 @@
+#https://habr.com/ru/articles/701800/
+https://metanit.com/python/django/1.1.php
+Работа с терминалом
+$metanit
+$python3
+$import django
+$django-admin startproject core // создание проекта
+$python3 manage.py startapp hello // создание приложения

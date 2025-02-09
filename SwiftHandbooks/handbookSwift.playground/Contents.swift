@@ -1106,3 +1106,7 @@ struct User123: Identifiable {
     var id: String
 }
 
+var numb = 24
+if numb > 0 {
+    print("Ok")
+}
