@@ -1,4 +1,4 @@
-a = input()
+a = str(input())
 b = a.split(" ")
 
 def superman_int(x):        #функция для превращения списка строк в список чисел
@@ -6,25 +6,13 @@ def superman_int(x):        #функция для превращения спи
         x[i] = int(x[i])
     return x
 
+def superman_like7(x):
+    count = 0
+    for i in range(len(x)):
+        if x[i] % 10 == 7:
+            count += 1
+    return count
 
-def superman_remove2(x):    #функция для удаления двоек
-    x.remove(2)
-    return x
+print(superman_like7(superman_int(b)))
 
-
-def superman_average(x):
-    if len(x) == 0:
-        print("К сожалению, у вас были только двойки")
-    else:
-        summ = 0
-        for i in range(len(x)):
-            summ = summ + x[i]
-        aver = summ / len(b)
-        print(round(aver, 2))
-
-
-c = superman_int(b)
-d = superman_remove2(c)
-print(c)
-print(d)
-#superman_average(d)
+        
