@@ -1,0 +1,41 @@
+/* comments */
+
+html, body {
+    height: 100%;
+    width: 100%;
+  
+    background-image: url(https://global.discourse-cdn.com/freecodecamp/original/3X/2/0/206c254cf9e405bcddf6caea7f882dca146dcd3c.png);
+    background-color: lightgray; /* changes the background color */
+    opacity: 0.9; /* changes the opacity */
+    background-position: right top; /* changes the position of the image */
+  
+    
+  }
+  
+  
+  #main1 {
+    background-color: darkgray;
+    
+  }
+  h1, p, pre {
+    color:white
+  }
+  
+  .heading2 { /* class heading */
+    color: blue; /* changes the color of the text */
+  }
+  
+  h3.heading3 { /* class heading only for h3 */
+    color: darkgray; /* changes the color of the text */
+  
+  
+  
+  }
+  
+  
+  #welcome {
+    background-color: white; /* changes the background color */
+  }
+  
+  /* 1.51.00 */
+  

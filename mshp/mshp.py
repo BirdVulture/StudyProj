@@ -23,21 +23,18 @@ for i in range(len(a)):
     print(f"{i}) {a[i]} проверен!")'
 '''
 
-a = list(map(int, input().split()))
-index = []
-def minimal_element(a):
-    minimal = min(a)
-    for i in range(len(a)):
-        if a[i] == minimal:
-            index.append(i)
+s = list(map(int, input().split()))
+paund_course = 101.97
+paund = []
+def convertor(s):
+    for i in range(len(s)):
+        b = round(s[i] / paund_course, 2)
+        paund.append(b)
+    return paund
+convertor(s)
+print(*paund)
+print(*s)
 
+    
 
-def check_index(index):
-    b = len(index)
-    print("Индекс минимального элемента равен", index[b-1])
-
-
-
-minimal_element(a)
-check_index(index)
 
