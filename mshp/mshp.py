@@ -1,3 +1,4 @@
+'''
 a = str(input())
 b = a.split(" ")
 
@@ -14,5 +15,29 @@ def superman_like7(x):
     return count
 
 print(superman_like7(superman_int(b)))
+'''
 
-        
+'''
+a = list(map(int, input().split()))
+for i in range(len(a)):
+    print(f"{i}) {a[i]} проверен!")'
+'''
+
+a = list(map(int, input().split()))
+index = []
+def minimal_element(a):
+    minimal = min(a)
+    for i in range(len(a)):
+        if a[i] == minimal:
+            index.append(i)
+
+
+def check_index(index):
+    b = len(index)
+    print("Индекс минимального элемента равен", index[b-1])
+
+
+
+minimal_element(a)
+check_index(index)
+
