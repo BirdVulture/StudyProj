@@ -1,3 +1,4 @@
+"""
 class Calculator:
     num1 = 0
     num2 = 0
@@ -22,3 +23,25 @@ b= int(input())
 
 print(c.addition(a, b))
 print(c.subtraction(a, b))
+"""
+
+class Coin:
+    #x = int
+    #y = int
+
+    def __init__(self, image, x, y):
+        self.image = image
+        self.x = x
+        self.y = y
+
+
+coin = Coin("изображение", 100, 320)
+coin2 = Coin("изображение", 200, 320)
+
+
+print(coin.x)
+print(coin.y)
+
+
+
+#screen.blit(coin.image, (coin.x, coin.y)
