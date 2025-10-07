@@ -20,7 +20,7 @@ class dataBaseManagment:
         self.cursor = self.products.cursor()
 
     def creadeProduct(self):
-        self.cursor.execute( "INSERT INTO products (Id, name, calories) VALUES ("1", "milk", "2")" )
+        #self.cursor.execute( "INSERT INTO products (Id, name, calories) VALUES ("1", "milk", "2")" )
 
         self.connection.commit()
 
