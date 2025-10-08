@@ -14,7 +14,7 @@ import sqlite3
 
 
 
-class dataBaseManagment:
+class dataBaseManager:
     def __init__(self):
         self.products = sqlite3.connect("products.db")
         self.cursor = self.products.cursor()
