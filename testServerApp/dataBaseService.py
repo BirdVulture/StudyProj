@@ -1,8 +1,8 @@
 #sqlite3
 #.open products.db
 #CREATE TABLE products (Id INTEGER, name TEXT NOT NULL, calories INTEGER NOT NULL, PRIMARY KEY(Id));
-#INSERT INTO products (Id, name, calories) VALUES ("1", "milk", "2")
-#SELECT * FROM products
+#INSERT INTO products (Id, name, calories) VALUES ("1", "milk", "2");
+#SELECT * FROM products;
 #.schema
 #.quit
 # SELECT * FROM products WHERE name = "milk" поиск по названию продукта
@@ -19,10 +19,16 @@ class dataBaseManager:
         self.products = sqlite3.connect("products.db")
         self.cursor = self.products.cursor()
 
-    def creadeProduct(self):
-        #self.cursor.execute( "INSERT INTO products (Id, name, calories) VALUES ("1", "milk", "2")" )
+    def creadeProduct(self, prod):
+        self.cursor.execute("INSERT INTO products (Id, name, calories) VALUES (?,?, ?)", prod)
 
         self.connection.commit()
+        self.products.close()
+    
+    def getProductInfo(self, prod):
+        self.cursor.execute("SELECT INTO products (Id, name, calories) VALUES (?,?, ?)", prod)
 
+        self.connection.commit()
+        self.products.close()
 
        
