@@ -2,23 +2,19 @@ class StringSource:
     def __init__(self, strings):
         self.strings = strings
         
-    def get_length(self,):
-        return len(strings)   
+    def get_length(self):
+        return len(self.strings)
         
+        
+
 class ListSource:
     def __init__(self, lists):
         self.lists = lists
-        
-    def get_length(self,):
-        return len(lists)
-        
-def print_source_length(source):
-    return f"Длина источника: {source.get_length}"
+    
+    def get_length(self):
+        return len(self.lists)
+    
 
-lists = ListSource([1, 2, 3])
+source = StringSource("abcd")
 
-
-
-list1234 = [1, 2, 3]
-print(list1234)
-
+print (f"Длина источника: {source.get_length()}")
