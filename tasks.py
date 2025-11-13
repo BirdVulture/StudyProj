@@ -1,20 +1,14 @@
-class StringSource:
-    def __init__(self, strings):
-        self.strings = strings
-        
-    def get_length(self):
-        return len(self.strings)
-        
-        
-
-class ListSource:
-    def __init__(self, lists):
-        self.lists = lists
+class Vehicle:
+    vehicles_created = 0
     
-    def get_length(self):
-        return len(self.lists)
-    
+    def __init__(self, brand, max_speed):
+        self.brand = brand
+        self._max_speed = max_speed
+        self._mileage = 0
+        vehicles_created = vehicles_created + 1
 
-source = StringSource("abcd")
+class Car(Vehicle):
+    pass
 
-print (f"Длина источника: {source.get_length()}")
+class Bicycle(Vehicle):
+    pass
